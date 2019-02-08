@@ -1,0 +1,13 @@
+/* pages/annual/annual.wxss */
+#title{
+  font-family: "黑体";
+  font-size: 48rpx;
+  font-weight: bold;
+  text-align: center;
+  margin: 20rpx;
+}
+.text_block{
+  font-size:28rpx;
+  line-height: 1.5rem;
+  text-indent: 1.5rem;
+}

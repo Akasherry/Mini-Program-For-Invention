@@ -1,17 +1,17 @@
 /**index.wxss**/
 .layer{
   background-color:  #e9e8df;
-  height: 700px;
+  height: 1300rpx;
 }
 .userinfo {
-  height: 200px;
+  height: 400rpx;
   display: flex;
   flex-direction: row;
   /* margin-left: 15rpx; */
   /* margin-right: 15rpx; */
   background-color: #61a493;
-  border-radius: 5px;
-  margin: 5px;
+  border-radius: 10rpx;
+  margin: 10rpx;
   box-shadow: 2rpx 2rpx 3rpx #888888;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .userinfo-nickname {
-  margin-top: 20px;
+  margin-top: 40rpx;
   color: aqua
 }
 

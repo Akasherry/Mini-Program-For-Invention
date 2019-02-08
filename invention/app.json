@@ -1,16 +1,21 @@
 {
-  "pages":[
+  "pages": [
     "pages/home/home",
     "pages/logs/logs",
     "pages/mine/mine",
-    "pages/info/info"
+    "pages/info/info",
+    "pages/intro/intro",
+    "pages/rule/rule",
+    "pages/apply/apply",
+    "pages/annual/annual",
+    "pages/help/help"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "中国发明协会",
-    "navigationBarTextStyle":"black",
-    "backgroundColor":"#eeeeee"
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee"
   },
   "tabBar": {
     "backgroundColor": "white",

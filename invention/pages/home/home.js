@@ -4,32 +4,32 @@ Page ({
       {
         "name":"文件通知",
         "url":"../../static/image/file.png",
-        "func":"infoFunc"
+        "func":"infoFunc1"
       },
       {
         "name": "协会简介",
         "url": "../../static/image/intro.png",
-        "func": "aFunc"
+        "func": "infoFunc2"
       },
       {
         "name": "协会章程",
         "url": "../../static/image/rule.png",
-        "func": "aFunc"
+        "func": "infoFunc3"
       },
       {
         "name": "申请入会",
         "url": "../../static/image/apply.png",
-        "func": "aFunc"
+        "func": "infoFunc4"
       },
       {
         "name": "年会介绍",
         "url": "../../static/image/annual.png",
-        "func": "aFunc"
+        "func": "infoFunc5"
       },
       {
         "name": "帮助信息",
         "url": "../../static/image/help.png",
-        "func": "aFunc"
+        "func": "infoFunc6"
       },
       {
         "name": "报名通道",
@@ -56,9 +56,34 @@ Page ({
   aFunc: function() {
     console.log("Success")
   },
-  infoFunc: function() {
+  infoFunc1: function() {
     wx.navigateTo({
       url: '../info/info',
+    })
+  },
+  infoFunc2: function () {
+    wx.navigateTo({
+      url: '../intro/intro',
+    })
+  },
+  infoFunc3: function () {
+    wx.navigateTo({
+      url: '../rule/rule',
+    })
+  },
+  infoFunc4: function () {
+    wx.navigateTo({
+      url: '../apply/apply',
+    })
+  },
+  infoFunc5: function () {
+    wx.navigateTo({
+      url: '../annual/annual',
+    })
+  },
+  infoFunc6: function () {
+    wx.navigateTo({
+      url: '../help/help',
     })
   },
   newFunc:function(){

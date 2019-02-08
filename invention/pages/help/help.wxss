@@ -1,0 +1,13 @@
+/* pages/help/help.wxss */
+.text_title{
+  font-family: "黑体";
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+  margin: 20rpx;
+  color: #2f5249;
+}
+.text_content{
+  font-size: 28rpx;
+  line-height: 1.5rem;
+}
