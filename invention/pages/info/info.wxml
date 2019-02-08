@@ -1,0 +1,15 @@
+<!--info.wxml-->
+<!-- class="layer" style="background:#f6f6f6" -->
+<view class="layer"  style="background:#eeeeee">
+  <view>
+    <view class="title">文件通知</view>
+    <view class="list"></view>
+    <view class="title">下载专区</view>
+    <view class="list">
+      <view class="list_item" wx:for="{{infos}}" wx:for-index="idx" wx:for-item="info" bindtap="load" data-route="{{info.url}}">
+        <loading hidden="{{loadingHidden}}">LOADING</loading>
+        <text>{{info.name}}</text>
+      </view>
+    </view>
+  </view>
+</view>

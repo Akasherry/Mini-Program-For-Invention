@@ -1,0 +1,33 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/logs/logs",
+    "pages/info/info",
+    "pages/mine/mine"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "中国发明协会",
+    "navigationBarTextStyle":"black",
+    "backgroundColor":"#eeeeee"
+  },
+  "tabBar": {
+    "backgroundColor": "white",
+    "color": "grey",
+    "selectedColor": "#000000",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "主页",
+        "iconPath": "./static/image/discover.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "./static/image/mine.png"
+      }
+    ]
+  }
+}

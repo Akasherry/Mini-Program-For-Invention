@@ -1,0 +1,19 @@
+.title {
+  text-align: center;
+  color: white;
+  background-color: #2f5249;
+  border-radius: 5px;
+  margin: 5px;
+  /* height:35px; */
+}
+.list {
+  font-size: 18px;
+  background-color: #e9e8df;
+  border-radius: 5px;
+  margin: 5px;
+  height: 300px;
+  /* border: 1px solid rgb(92, 91, 92); */
+}
+.list_item{
+  margin: 10px;
+}

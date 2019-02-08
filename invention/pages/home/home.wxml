@@ -1,0 +1,27 @@
+<!--home.wxml-->
+<view class="layer" style="background:#2f5249">
+  <view class="swiper_container"><swiper id="recommand" autoplay='true' circular='true' style="background-color:rgb(0,0,0,0)" bindtap='newFunc'>
+    <swiper-item>
+      <image class="rec_pic" mode="scaleToFill" src="../../static/image/swiper1.jpg" style="width:100%"></image>
+    </swiper-item>
+    <swiper-item>
+      <image class="rec_pic" mode="scaleToFill" src="../../static/image/swiper2.jpg" style="width:100%"></image>
+    </swiper-item>
+  </swiper></view>
+  <view class="menu_container">
+    <view class="menu_item" wx:for="{{menus}}" wx:for-index="idx" wx:for-item="menu" bindtap='{{menu.func}}'>
+        <image class="menu_icon" src="{{menu.url}}" />
+        <text class="menu_name" style='color:black'>{{menu.name}}</text>
+    </view>
+  </view>
+  <view class="news_player">
+    <view id="news_label">
+    <label id="news_label1">|</label>
+    <label>NEWS</label>
+    </view>
+    <view class="newsBlock" wx:for="{{news}}" wx:for-index="idx" wx:for-item="news">
+      <view>{{news.title}}</view>
+      <view>{{news.content}}</view>
+    </view>
+  </view>
+</view>
