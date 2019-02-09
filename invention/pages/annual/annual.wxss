@@ -1,4 +1,7 @@
 /* pages/annual/annual.wxss */
+page{
+  background-color: #eeeeee;
+}
 #title{
   font-family: "黑体";
   font-size: 48rpx;

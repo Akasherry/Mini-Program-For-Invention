@@ -34,12 +34,12 @@ Page ({
       {
         "name": "报名通道",
         "url": "../../static/image/sign.png",
-        "func": "aFunc"
+        "func": "infoFunc7"
       },
       {
         "name": "往届展会",
         "url": "../../static/image/past.png",
-        "func": "aFunc"
+        "func": "infoFunc8"
       }
     ],
     news:[
@@ -84,6 +84,16 @@ Page ({
   infoFunc6: function () {
     wx.navigateTo({
       url: '../help/help',
+    })
+  },
+  infoFunc7: function () {
+    wx.navigateTo({
+      url: '../path/path',
+    })
+  },
+  infoFunc8: function () {
+    wx.navigateTo({
+      url: '../past/past',
     })
   },
   newFunc:function(){

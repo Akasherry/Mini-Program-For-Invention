@@ -1,13 +1,21 @@
 /* pages/help/help.wxss */
+page{
+  background-color: #eeeeee;
+}
 .text_title{
   font-family: "黑体";
   font-size: 40rpx;
   font-weight: bold;
   text-align: center;
   margin: 20rpx;
-  color: #2f5249;
+  color: white;
+  background-color: #2f5249;
+  border-radius:10rpx;
 }
 .text_content{
+  border-radius:10rpx;
   font-size: 28rpx;
   line-height: 1.5rem;
+  background-color: #e9e8df;
+  text-indent: 1.5rem;
 }

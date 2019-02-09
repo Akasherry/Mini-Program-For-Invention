@@ -1,6 +1,6 @@
 <!--pages/annual/annual.wxml-->
 <view class='layer' style="background:#eeeeee">
-  <text id='title' >年会简介</text>
+  <text id='title' style='color:#2f5249'>年会简介</text>
   <view class='text_block' wx:for="{{text}}" wx:for-index="index" wx:for-item="each" style='margin: 10rpx;'>
     <view>{{each.content}}</view>
     <image wx:if='{{each.image!=""}}' src='{{each.image}}' style='width:100%'> </image>

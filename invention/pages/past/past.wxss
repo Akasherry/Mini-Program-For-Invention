@@ -1,0 +1,11 @@
+/* pages/past/past.wxss */
+page{
+  background-color: #eeeeee;
+}
+.eighth{
+  margin-top: 10rpx;
+  width: 100%;
+  background-color: #2f5249;
+  border-radius: 0rpx;
+  color: white;
+}

@@ -8,7 +8,9 @@
     "pages/rule/rule",
     "pages/apply/apply",
     "pages/annual/annual",
-    "pages/help/help"
+    "pages/help/help",
+    "pages/path/path",
+    "pages/past/past"
   ],
   "window": {
     "backgroundTextStyle": "light",

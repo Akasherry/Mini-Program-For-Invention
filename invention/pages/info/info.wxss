@@ -1,9 +1,15 @@
+page{
+  background-color: #eeeeee;
+}
 .title {
   text-align: center;
   color: white;
   background-color: #2f5249;
   border-radius: 10rpx;
   margin: 10rpx;
+  font-family: "黑体";
+  font-size: 40rpx;
+  font-weight: bold;
   /* height:35px; */
 }
 .list {
