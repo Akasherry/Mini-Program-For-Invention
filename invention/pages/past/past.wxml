@@ -1,0 +1,6 @@
+<!--pages/past/past.wxml-->
+<view class="layer" style='background-color: #eeeeee'>
+  <label class="eighth" bindtap='switchEighth'>
+    <view class="eighth-block"></view>
+  </label>
+</view>

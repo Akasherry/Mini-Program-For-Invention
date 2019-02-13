@@ -1,0 +1,12 @@
+<!--pages/rule/rule.wxml-->
+<view class="layer"  style="background:#eeeeee">
+  <view class="title">协会章程
+  </view>
+  <view class="rule">
+  <image id="logo" src='../../static/image/raw_logo.png'></image>
+  <text id="title">中国发明协会章程\n（2016年5月16日）</text>
+    <scroll-view style='scroll-x:false; scroll-y:true'>
+      <view style='margin:15rpx'><text id="rule_text">{{text}}</text></view>
+    </scroll-view>
+  </view>
+</view>

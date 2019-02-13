@@ -1,0 +1,10 @@
+<!--pages/intro/intro.wxml-->
+<view class="layer"  style="background:#eeeeee">
+  <view class="title">协会简介
+  </view>
+  <view class="introduction">
+    <scroll-view style='scroll-x:false; scroll-y:true;'>
+      <view style='margin:15rpx;'><text id="intro_text">{{text}}</text></view>
+    </scroll-view>
+  </view>
+</view>
