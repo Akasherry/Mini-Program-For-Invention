@@ -10,7 +10,8 @@
     "pages/annual/annual",
     "pages/help/help",
     "pages/path/path",
-    "pages/past/past"
+    "pages/past/past",
+    "pages/past/past-eighth/past-eighth"
   ],
   "window": {
     "backgroundTextStyle": "light",

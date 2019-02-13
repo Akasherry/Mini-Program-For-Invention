@@ -1,4 +1,4 @@
-// pages/past/past.js
+// pages/past/past-eighth/past-eighth.js
 Page({
 
   /**
@@ -7,11 +7,7 @@ Page({
   data: {
 
   },
-  switchEighth: function(){
-    wx.navigateTo({
-      url: '../past/past-eighth/past-eighth',
-    })
-  },
+
   /**
    * Lifecycle function--Called when page load
    */

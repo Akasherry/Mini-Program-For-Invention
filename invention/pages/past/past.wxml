@@ -1,4 +1,6 @@
 <!--pages/past/past.wxml-->
 <view class="layer" style='background-color: #eeeeee'>
-  <button class="eighth" bindtap='switchEighth'>第八届国际发明展览会</button>
+  <label class="eighth" bindtap='switchEighth'>
+    <view class="eighth-block"></view>
+  </label>
 </view>
