@@ -1,2 +1,21 @@
 <!--pages/past/exhibitions/tailand/tailand.wxml-->
-<text>pages/past/exhibitions/tailand/tailand.wxml</text>
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" bindtap='newFunc'>
+  <swiper-item wx:for="{{18}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class='bg-img shadow-blur' style="background-image:url(../../../../static/image/e1/{{index+1}}.jpg)"></view>
+  </swiper-item>
+</swiper>
+<view class="text-bold" style='font-size:30rpx;text-indent:20rpx'>泰国“发明者日”国际知识产权发明创新与技术展览会</view>
+<view style='font-size:28rpx;text-indent:20rpx; margin-top:16rpx'>时间：2018年2月2日-2月6日</view>
+<view style='font-size:28rpx;text-indent:20rpx; margin-top:16rpx'>地点：泰国曼谷</view>
+<view class='line'></view>
+<view class="cu-bar">
+    <view class='action'>
+      <text class='icon-text text-blue'></text>
+      <text class='text-x text-bold'>相关文件</text>
+    </view>
+</view>
+
+<view class="flex shadow align-center" bindtap='download'>
+      <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
+      <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>《关于参加2018年泰国“发明者日”国际知识产权发明创新与技术展览会的通知》</view>
+</view>

@@ -1,0 +1,33 @@
+<!--pages/past/exhibitions/shanghai/shanghai.wxml-->
+<!-- <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" bindtap='newFunc'>
+  <swiper-item wx:for="{{18}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class='bg-img shadow-blur' style="background-image:url(../../../../static/image/e1/{{index+1}}.jpg)"></view>
+  </swiper-item>
+</swiper> -->
+<view class="text-bold" style='font-size:30rpx;text-indent:20rpx;margin-top:25rpx'>第二届中国（上海）国际发明创新展览会</view>
+<view style='font-size:28rpx;text-indent:20rpx; margin-top:16rpx'>时间：2018年4月19日-4月21日</view>
+<view style='font-size:28rpx;text-indent:20rpx; margin-top:16rpx'>地点：上海浦东新区国展路1090号</view>
+<view class='line'></view>
+<view style='font-size:28rpx;text-indent:20rpx; margin-top:16rpx;margin-left:20rpx;margin-right:20rpx;line-height:38rpx'>展览设创新发明孵化企业区、创新发明成果区、学生区、境外发明创新区。展览中将设“新时代发明人的新机遇、新任务”论坛，创新发明技术推介会。为鼓励创新发明，展览会组织评奖活动，设金、银、铜奖，并于21日召开颁奖大会。\n
+展览会推进了我国创新发明与国际间的交流和合作，开阔眼界，拓展思路，提升研发水平；展示推介中国自主发明创新科技成果，普及科学知识，营造“万众创新、大众创业”的环境和氛围；推进发明创新成果与企业、市场、资金的结合，加快发明创新成果的转化应用与实施产业化;集聚各国发明人的科技创新智慧和能力，为社会发展提供服务；扩展各国创新发明的影响力、创新成果集聚力、技术交易的竞争力，促进各国经济发展。
+</view>
+<view class='line'></view>
+<view class="cu-bar">
+    <view class='action'>
+      <text class='icon-text text-blue'></text>
+      <text class='text-x text-bold'>相关文件</text>
+    </view>
+</view>
+
+<view class="flex shadow align-center" bindtap='download'>
+      <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
+      <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>2018第二届中国（上海）第五届国际发明创新展览会的通知.doc</view>
+</view>
+<view class="flex shadow align-center" bindtap='download'>
+      <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
+      <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>2018第二届中国（上海）国际发明创新展览会的通知.pdf</view>
+</view>
+<view class="flex shadow align-center" bindtap='download'>
+      <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
+      <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>授权委任书</view>
+</view>

@@ -12,7 +12,13 @@
     "pages/mine/mine",
     "pages/path/russia/russia",
     "pages/xiehui/xiehui",
-    "pages/past/exhibitions/tailand/tailand"
+    "pages/past/exhibitions/tailand/tailand",
+    "pages/past/exhibitions/shanghai/shanghai",
+    "pages/past/exhibitions/american/american1",
+    "pages/past/exhibitions/american/american2",
+    "pages/past/exhibitions/three/three",
+    "pages/past/exhibitions/american/american3",
+    "pages/past/exhibitions/tuerqi/tuerqi"
   ],
   "window": {
     "backgroundTextStyle": "light",

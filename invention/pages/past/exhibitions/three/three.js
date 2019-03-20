@@ -1,12 +1,12 @@
-// pages/past/exhibitions/tailand/tailand.js
+// pages/past/exhibitions/three/three.js
 Page({
 
   data: {
     cardCur: 0,
-    
+
   },
   onLoad() {
-   
+
   },
   DotStyle(e) {
     this.setData({
@@ -19,7 +19,7 @@ Page({
       cardCur: e.detail.current
     })
   },
-  download :function(){
+  download: function () {
     wx.downloadFile({
       url: 'https://www.fracturesr.xyz/source', // 仅为示例，并非真实的资源
       success(res) {

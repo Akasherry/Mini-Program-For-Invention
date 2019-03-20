@@ -1,0 +1,16 @@
+<!--pages/past/exhibitions/three/three.wxml-->
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" bindtap='newFunc'>
+  <swiper-item wx:for="{{15}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class='bg-img shadow-blur' style="background-image:url(../../../../static/image/e2/{{index+1}}.jpg)"></view>
+  </swiper-item>
+</swiper>
+<view class="text-bold" style='font-size:30rpx;text-indent:20rpx'>塞尔维亚、克罗地亚及波兰三国同期国际发明展</view>
+<view style='font-size:28rpx;text-indent:20rpx; margin-top:16rpx'>时间：2017年10月12-10月22日（全程15天）</view>
+<view class='line'></view>
+<view class="cu-bar">
+    <view class='action'>
+      <text class='icon-text text-blue'></text>
+      <text class='text-x text-bold'>相关文件</text>
+    </view>
+</view>
+
