@@ -1,17 +1,13 @@
 <!--index.wxml-->
-<view class='layer'>
-  <view class="userinfo">
-      <view id="inf">
-        <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+<view class='layer'>  
+  <view class="userinfo bg-gradual-blue">
+    <view class="padding-sm" id="inf" style="height:300rpx;">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
       <block wx:else>
         <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
         <view class="userinfo-nickname">{{userInfo.nickName}}</view>
       </block>
-      <view id="accountInfor">
-        <text>等级：1</text>
-        <text>登陆天数：1</text>
-      </view>
-      </view>
+    </view>
   </view>
   <view id="function">
   </view>

@@ -1,6 +1,26 @@
 <!--pages/past/past.wxml-->
-<view class="layer" style='background-color: #eeeeee'>
-  <label class="eighth" bindtap='switchEighth'>
-    <view class="eighth-block"></view>
-  </label>
+<view class="bg-gradual-blue">
+  <image src='https://image.weilanwl.com/gif/wave.gif' mode='scaleToFill' class='gif-black response' style='height:100rpx'></image>
+</view>
+<view class="padding-xl radius shadow-blur bg-gradual-blue margin" bindtap="toExhibition1" style="height:300rpx">
+  <text class='flex solid-bottom padding align-center text-white text-bold' style='font-size:32rpx'>2018年泰国“发明者日”国际知识产权发明创新与技术展览会</text>
+</view>
+<view class="padding-xl radius shadow-blur bg-gradual-blue margin" bindtap="toExhibition2" style="height:300rpx">
+  <text class='flex solid-bottom padding align-center text-white text-bold' style='font-size:32rpx'>2018“第二届中国（上海）国际发明创新展览会”</text>
+</view>
+<view class="padding-xl radius shadow-blur bg-gradual-blue margin" bindtap="toExhibition3" style="height:300rpx">
+  <text class='flex solid-bottom padding align-center text-white text-bold' style='font-size:32rpx'>2018首届硅谷国际发明节</text>
+</view>
+<view class="padding-xl radius shadow-blur bg-gradual-blue margin" bindtap="toExhibition4" style="height:300rpx">
+  <text class='flex solid-bottom padding align-center text-white text-bold' style='font-size:32rpx'>2017第32届美国匹兹堡国际发明展览会</text>
+</view>
+<view class="padding-xl radius shadow-blur bg-gradual-blue margin" bindtap="toExhibition5" style="height:300rpx">
+  <text class='flex solid-bottom padding align-center text-white text-bold' style='font-size:32rpx'>2017塞尔维亚、克罗地亚及波兰三国同期国际发明展</text>
+</view>
+<view class="padding-xl radius shadow-blur bg-gradual-blue margin" bindtap="toExhibition6" style="height:300rpx">
+  <text class='flex solid-bottom padding align-center text-white text-bold' style='font-size:32rpx'>2016第31届美国匹兹堡国际发明展览会</text>
+</view>
+
+<view class="padding-xl radius shadow-blur bg-gradual-blue margin" bindtap="toExhibition7" style="height:300rpx">
+  <text class='flex solid-bottom padding align-center text-white text-bold' style='font-size:32rpx'>2016土耳其国际发明展览会</text>
 </view>

@@ -1,10 +1,13 @@
 <!--pages/rule/rule.wxml-->
-<view class="layer"  style="background:#eeeeee">
-  <view class="title">协会章程
-  </view>
+<view class="cu-bar justify-center bg-gradual-blue shadow-blur radius margin">
+    <view class='action border-title'>
+      <text class='text-xl text-bold'>协会章程</text>
+      <text class='bg-white' style='width:2rem'></text>
+      <!-- 底部样式 last-child选择器-->
+    </view>
+</view>
+<view class="layer"  style="background:#eeeeee;margin-top:25rpx">
   <view class="rule">
-  <image id="logo" src='../../static/image/raw_logo.png'></image>
-  <text id="title">中国发明协会章程\n（2016年5月16日）</text>
     <scroll-view style='scroll-x:false; scroll-y:true'>
       <view style='margin:15rpx'><text id="rule_text">{{text}}</text></view>
     </scroll-view>

@@ -1,8 +1,7 @@
 <!--info.wxml-->
-<!-- class="layer" style="background:#f6f6f6" -->
 <view class="layer"  style="background:#eeeeee">
   <view>
-    <view class="title">文件通知</view>
+    <!-- <view class="title">文件通知</view>
     <view class="list"></view>
     <view class="title">下载专区</view>
     <view class="list">
@@ -10,6 +9,22 @@
         <loading hidden="{{loadingHidden}}">LOADING</loading>
         <text>{{info.name}}</text>
       </view>
-    </view>
+    </view> -->
+    <i-collapse name="{{name}}">
+    <i-collapse-item title="文件通知" name="name1">
+      <view slot="content" bindtap='checkFile' wx:for="{{files}}" wx:for-item="file" data-data="{{item.data}}" data-index="{{index}}">
+        <i-card title="{{file.Title}}" full="true">
+        </i-card>  
+      </view>
+    </i-collapse-item>
+    <i-collapse-item title="下载专区" name="name2">
+      <view slot="content" i-class-content="green-text" bindtap='toMessage' wx:for="{{infos}}" wx:for-item="info" data-data="{{item.data}}" data-index="{{index}}" bindtap="load" data-route="{{info.url}}">
+        <view style="margin-top:10rpx">
+          <i-card title="{{info.name}}">
+        </i-card>  
+        </view>
+      </view>
+    </i-collapse-item>
+  </i-collapse>
   </view>
 </view>

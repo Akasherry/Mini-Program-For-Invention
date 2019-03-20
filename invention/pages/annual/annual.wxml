@@ -1,8 +1,14 @@
 <!--pages/annual/annual.wxml-->
-<view class='layer' style="background:#eeeeee">
-  <text id='title' style='color:#2f5249'>年会简介</text>
+<view class="cu-bar justify-center bg-gradual-blue shadow-blur radius margin">
+    <view class='action border-title'>
+      <text class='text-xl text-bold'>年会简介</text>
+      <text class='bg-white' style='width:2rem'></text>
+      <!-- 底部样式 last-child选择器-->
+    </view>
+</view>
+<view class='layer' style="background:#eeeeee;margin-top:25rpx">
   <view class='text_block' wx:for="{{text}}" wx:for-index="index" wx:for-item="each" style='margin: 10rpx;'>
     <view>{{each.content}}</view>
-    <image wx:if='{{each.image!=""}}' src='{{each.image}}' style='width:100%'> </image>
+    <image class="shadow-blur" wx:if='{{each.image!=""}}' src='{{each.image}}' style='width:100%'> </image>
   </view>
 </view>

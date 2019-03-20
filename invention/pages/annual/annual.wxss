@@ -1,4 +1,6 @@
 /* pages/annual/annual.wxss */
+@import "../../colorui.wxss";
+
 page{
   background-color: #eeeeee;
 }

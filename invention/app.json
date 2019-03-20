@@ -2,16 +2,17 @@
   "pages": [
     "pages/home/home",
     "pages/logs/logs",
-    "pages/mine/mine",
     "pages/info/info",
     "pages/intro/intro",
     "pages/rule/rule",
-    "pages/apply/apply",
     "pages/annual/annual",
     "pages/help/help",
     "pages/path/path",
     "pages/past/past",
-    "pages/past/past-eighth/past-eighth"
+    "pages/mine/mine",
+    "pages/path/russia/russia",
+    "pages/xiehui/xiehui",
+    "pages/past/exhibitions/tailand/tailand"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,20 +23,38 @@
   },
   "tabBar": {
     "backgroundColor": "white",
-    "color": "grey",
+    "color": "black",
     "selectedColor": "#000000",
     "position": "bottom",
     "list": [
       {
         "pagePath": "pages/home/home",
-        "text": "主页",
-        "iconPath": "./static/image/discover.png"
+        "text": "最新展会",
+        "iconPath": "./static/image/zhanhui.png"
       },
       {
-        "pagePath": "pages/mine/mine",
-        "text": "我的",
-        "iconPath": "./static/image/mine.png"
+        "pagePath": "pages/past/past",
+        "text": "往届展会",
+        "iconPath": "./static/image/zhanhuiban.png"
+      },
+      {
+        "pagePath": "pages/xiehui/xiehui",
+        "text": "发明协会",
+        "iconPath": "./static/image/xiehui.png"
       }
     ]
+  },
+  "usingComponents": {
+    "i-card": "../dist/card/index",
+    "i-icon": "../dist/icon/index",
+    "i-button": "../dist/button/index",
+    "i-grid": "../dist/grid/index",
+    "i-grid-item": "../dist/grid-item/index",
+    "i-grid-icon": "../dist/grid-icon/index",
+    "i-grid-label": "../dist/grid-label/index",
+    "i-collapse": "../dist/collapse/index",
+    "i-collapse-item": "../dist/collapse-item/index",
+    "i-input": "../dist/input/index",
+    "i-notice-bar": "../dist/notice-bar/index"
   }
 }

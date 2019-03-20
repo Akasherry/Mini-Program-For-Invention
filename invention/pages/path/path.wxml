@@ -1,2 +1,4 @@
 <!--pages/path/path.wxml-->
-<text>pages/path/path.wxml</text>
+<view class="padding-xl radius shadow-blur bg-gradual-red margin" bindtap="toExhibition" style="height:400rpx">
+  <text class='flex solid-bottom padding align-center text-white text-bold' style='font-size:32rpx'>第22届俄罗斯‘阿基米德’国际展览会</text>
+</view>

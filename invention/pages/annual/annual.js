@@ -44,7 +44,11 @@ Page({
       },
     ]
   },
-
+  SetSize(e) {
+    this.setData({
+      size: e.detail.value
+    })
+  },
   /**
    * Lifecycle function--Called when page load
    */

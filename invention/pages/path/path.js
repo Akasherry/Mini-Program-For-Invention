@@ -62,5 +62,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  toExhibition: function(){
+    wx.navigateTo({
+      url: 'russia/russia',
+    })
   }
 })
