@@ -19,15 +19,15 @@
     </view>
 </view>
 
-<view class="flex shadow align-center" bindtap='download'>
+<view class="flex shadow align-center" bindtap='download1'>
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
       <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>2018第二届中国（上海）第五届国际发明创新展览会的通知.doc</view>
 </view>
-<view class="flex shadow align-center" bindtap='download'>
+<view class="flex shadow align-center" bindtap='download2'>
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
       <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>2018第二届中国（上海）国际发明创新展览会的通知.pdf</view>
 </view>
-<view class="flex shadow align-center" bindtap='download'>
+<view class="flex shadow align-center" bindtap='download3'>
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
       <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>授权委任书</view>
 </view>
