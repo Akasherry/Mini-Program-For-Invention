@@ -51,7 +51,7 @@ Page ({
         ]
       }
     ],
-    color:['black','black','black','black'],
+    color: ['white', 'white', 'white', 'white'],
     TabCur: 0,
     scrollLeft: 0,
     infos: [

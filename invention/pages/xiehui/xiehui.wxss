@@ -1,1 +1,4 @@
 /* pages/xiehui/xiehui.wxss */
+page{
+  background-color:white
+}

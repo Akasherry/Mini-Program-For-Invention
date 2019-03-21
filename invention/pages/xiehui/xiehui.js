@@ -8,17 +8,17 @@ Page({
     menus1: [
       {
         "name": "协会简介",
-        "icon": "text",
+        "icon": "newsfill",
         "func": "infoFunc2"
       },
       {
         "name": "协会章程",
-        "icon": "newshot",
+        "icon": "newshotfill",
         "func": "infoFunc3"
       },
       {
-        "name": "申请入会",
-        "icon": "friendadd",
+        "name": "申请专利",
+        "icon": "tagfill",
         "func": "infoFunc4"
       }],
     news: [
@@ -78,10 +78,8 @@ Page({
     })
   },
   infoFunc4: function () {
-    wx.showToast({
-      title: '请登录官网申请入会！',
-      icon: 'none',
-      duration: 2000
+    wx.navigateTo({
+      url: '../apply/apply',
     })
   }
 })
