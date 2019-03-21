@@ -17,9 +17,5 @@
 
 <view class="flex shadow align-center" bindtap='download'>
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
-      <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>《2016美国匹兹堡国际发明展通知.doc</view>
-</view>
-<view class="flex shadow align-center" bindtap='download'>
-      <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
-      <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>《2016美国匹兹堡国际发明展通知.doc</view>
+      <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>2016美国匹兹堡国际发明展通知.doc</view>
 </view>

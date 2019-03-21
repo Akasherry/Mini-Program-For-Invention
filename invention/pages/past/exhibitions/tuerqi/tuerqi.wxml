@@ -15,15 +15,15 @@
     </view>
 </view>
 
-<view class="flex shadow align-center" bindtap='download'>
+<view class="flex shadow align-center" bindtap='download1'>
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
       <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>关于组织参加2016土耳其国际发明展览会的通知.doc</view>
 </view>
-<view class="flex shadow align-center" bindtap='download'>
+<view class="flex shadow align-center" bindtap='download2'>
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
       <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>2015.12.24伊斯坦布尔国际展通知.doc</view>
 </view>
-<view class="flex shadow align-center" bindtap='download'>
+<view class="flex shadow align-center" bindtap='download3'>
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
       <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>附件二  Entry Form of Inventions 项目申报表 ISIF 2016.doc</view>
 </view>

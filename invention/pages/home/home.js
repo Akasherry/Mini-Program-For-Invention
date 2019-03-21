@@ -77,16 +77,7 @@ Page ({
       }
     ]
   },
-  onLoad: function() {
-    wx.request({
-      url: 'https://www.fracturesr.xyz/source/header/news.txt',
-      method: 'GET',
-      dataType: 'json',
-      success: function(res) {
-        console.log(res.data)
-      }
-    })
-  },
+  
   aFunc: function() {
     console.log("Success")
   },
