@@ -1,21 +1,20 @@
 <!--pages/xiehui/xiehui.wxml-->
 <i-notice-bar icon="systemprompt" loop>
-    2019年第22届莫斯科“阿基米德”国际发明展将于2019年3月26日到29日在俄罗斯首都莫斯科索科尔尼基会展中心）举行。;
+    2019年第22届莫斯科“阿基米德”国际发明展将于2019年3月26日到29日在俄罗斯首都莫斯科索科尔尼基会展中心）举行。
 </i-notice-bar>
 <i-grid>
-  <i-grid-item class="menu_item"wx:for="{{menus1}}" wx:for-index="idx" wx:for-item="menu" bindtap='{{menu.func}}'>
-    <!-- <image class="menu_icon" src="{{menu.url}}" /> -->
+  <i-grid-item class="menu_item radius"wx:for="{{menus1}}" wx:for-index="idx" wx:for-item="menu" bindtap='{{menu.func}}'>
     <i-grid-icon>
-      <text class='icon-{{menu.icon}} lg text-black' style='font-size:30px'></text>
+      <text class='icon-{{menu.icon}} lg' style='color:#53a9ff;font-size:30px'></text>
     </i-grid-icon>
     <i-grid-label style='margin-top:40rpx'>
-      <text class="menu_name" style='color:black;font-size:12px;'>{{menu.name}}</text>
+      <text class="menu_name" style='color:#53a9ff;font-size:12px;'>{{menu.name}}</text>
     </i-grid-label>
   </i-grid-item>
 </i-grid>
 <view class="cu-bar bg-white solid-bottom">
   <view class='action'>
-    <text class='icon-titles text-grey '></text> 每日新闻
+    <text class='icon-titles' style='color:#53a9ff;'></text> 每日新闻
   </view>
 </view>
 <view class="cu-card article no-card">
@@ -26,8 +25,8 @@
       <view class="desc">
         <view class='text-content'>{{news.content}}</view>
         <view>
-          <view class='cu-tag bg-red light sm round'>标签1</view>
-          <view class='cu-tag bg-green light sm round'>标签2</view>
+          <view class='cu-tag bg-blue light sm round'>标签1</view>
+          <view class='cu-tag bg-blue light sm round'>标签2</view>
         </view>
       </view>
     </view>

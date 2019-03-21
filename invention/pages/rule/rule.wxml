@@ -1,12 +1,15 @@
 <!--pages/rule/rule.wxml-->
-<view class="cu-bar justify-center bg-gradual-blue shadow-blur radius margin">
+<view class="cu-bar justify-center" style='background-color:#53a9ff'>
     <view class='action border-title'>
-      <text class='text-xl text-bold'>协会章程</text>
+      <text class='text-xl text-bold text-white'>协会章程</text>
       <text class='bg-white' style='width:2rem'></text>
       <!-- 底部样式 last-child选择器-->
     </view>
 </view>
-<view class="layer"  style="background:#eeeeee;margin-top:25rpx">
+<view style='background-color:#53a9ff'>
+  <image src='https://image.weilanwl.com/gif/wave.gif' mode='scaleToFill' class='gif-black response' style='height:100rpx'></image>
+</view>
+<view class="layer"  style="background:white;">
   <view class="rule">
     <scroll-view style='scroll-x:false; scroll-y:true'>
       <view style='margin:15rpx'><text id="rule_text">{{text}}</text></view>

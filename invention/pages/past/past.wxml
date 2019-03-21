@@ -1,23 +1,26 @@
 <!--pages/past/past.wxml-->
-<view class="bg-gradual-blue">
+<i-notice-bar icon="systemprompt" loop>
+    2019年第22届莫斯科“阿基米德”国际发明展将于2019年3月26日到29日在俄罗斯首都莫斯科索科尔尼基会展中心）举行。
+</i-notice-bar>
+<view style='background-color:#53a9ff'>
   <image src='https://image.weilanwl.com/gif/wave.gif' mode='scaleToFill' class='gif-black response' style='height:100rpx'></image>
 </view>
-<view class="padding-xl radius shadow-blur bg-gradual-blue margin" bindtap="toExhibition1" style="height:300rpx">
+<view class="padding-xl radius shadow-blur margin" bindtap="toExhibition1" style="height:300rpx;background-color:#53a9ff">
   <text class='flex solid-bottom padding align-center text-white text-bold' style='font-size:32rpx'>2018年泰国“发明者日”国际知识产权发明创新与技术展览会</text>
 </view>
-<view class="padding-xl radius shadow-blur bg-gradual-blue margin" bindtap="toExhibition2" style="height:300rpx">
+<view class="padding-xl radius shadow-blur margin" bindtap="toExhibition2" style="height:300rpx;background-color:#76d66a">
   <text class='flex solid-bottom padding align-center text-white text-bold' style='font-size:32rpx'>2018“第二届中国（上海）国际发明创新展览会”</text>
 </view>
-<view class="padding-xl radius shadow-blur bg-gradual-blue margin" bindtap="toExhibition3" style="height:300rpx">
+<view class="padding-xl radius shadow-blur margin" bindtap="toExhibition3" style="height:300rpx;background-color:#9890f4">
   <text class='flex solid-bottom padding align-center text-white text-bold' style='font-size:32rpx'>2018首届硅谷国际发明节</text>
 </view>
-<view class="padding-xl radius shadow-blur bg-gradual-blue margin" bindtap="toExhibition4" style="height:300rpx">
+<view class="padding-xl radius shadow-blur margin" bindtap="toExhibition4" style="height:300rpx;background-color:#f9da5a">
   <text class='flex solid-bottom padding align-center text-white text-bold' style='font-size:32rpx'>2017第32届美国匹兹堡国际发明展览会</text>
 </view>
-<view class="padding-xl radius shadow-blur bg-gradual-blue margin" bindtap="toExhibition5" style="height:300rpx">
+<view class="padding-xl radius shadow-blur margin" bindtap="toExhibition5" style="height:300rpx;background-color:#f788d2">
   <text class='flex solid-bottom padding align-center text-white text-bold' style='font-size:32rpx'>2017塞尔维亚、克罗地亚及波兰三国同期国际发明展</text>
 </view>
-<view class="padding-xl radius shadow-blur bg-gradual-blue margin" bindtap="toExhibition6" style="height:300rpx">
+<view class="padding-xl radius shadow-blur margin" bindtap="toExhibition6" style="height:300rpx;background-color:#00efef">
   <text class='flex solid-bottom padding align-center text-white text-bold' style='font-size:32rpx'>2016第31届美国匹兹堡国际发明展览会</text>
 </view>
 
