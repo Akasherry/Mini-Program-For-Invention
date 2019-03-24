@@ -29,5 +29,7 @@
 </view>
 <view class="flex shadow align-center" bindtap='download3'>
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
-      <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>授权委任书</view>
+      <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>授权委任书       </view>
 </view>
+ <progress class="progress" percent="{{percent}}" show-info="{{see}}" stroke-width="6" activeColor="#53a9ff" backgroundColor="#ffffff" active="{{isActive}}" active-mode="forwards">
+</progress>

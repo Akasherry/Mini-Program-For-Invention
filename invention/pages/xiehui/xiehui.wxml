@@ -2,6 +2,17 @@
 <i-notice-bar icon="systemprompt" loop>
     2019年第22届莫斯科“阿基米德”国际发明展将于2019年3月26日到29日在俄罗斯首都莫斯科索科尔尼基会展中心）举行。
 </i-notice-bar>
+<i-modal title="支付" wx:if="{{visible}}" actions="{{actions}}" bind:click="handleClick">
+    <view>请选择支付方式</view>
+</i-modal>
+<view class="userinfo" style='background-color:#53a9ff;height:300rpx '>
+  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  <block wx:else>
+    <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+    <view class="groupIndex text-bold">用户分组：{{group[index]}}</view>
+  </block>
+</view>
 <i-grid>
   <i-grid-item class="menu_item radius"wx:for="{{menus1}}" wx:for-index="idx" wx:for-item="menu" bindtap='{{menu.func}}'>
     <i-grid-icon>

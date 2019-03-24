@@ -5,7 +5,9 @@ Page({
    * Page initial data
    */
   data: {
-
+    percent: 0,
+    isActive: false,
+    see: false,
   },
 
   /**
@@ -65,6 +67,11 @@ Page({
   },
 
   download: function () {
+    this.setData({
+      isDown: true,
+      percent: 100,
+      see: true
+    })
     wx.downloadFile({
       url: "https://www.fracturesr.xyz/download/2017%E7%BE%8E%E5%9B%BD/2017%E5%8C%B9%E5%85%B9%E5%A0%A1%E5%9B%BD%E9%99%85%E5%B1%95%E9%80%9A%E7%9F%A5.doc",
       success(res) {
@@ -74,6 +81,11 @@ Page({
             filePath: res.tempFilePath
           })
         }
+        this.setData({
+          see: false,
+          percent: 0,
+          isActive: false
+        })
       }
     })
   }

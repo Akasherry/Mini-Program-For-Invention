@@ -14,3 +14,5 @@
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
       <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>中发协字（2018）29号关于参加首届美国硅谷国际发明节的通知</view>
 </view>
+ <progress class="progress" percent="{{percent}}" show-info="{{see}}" stroke-width="6" activeColor="#53a9ff" backgroundColor="#ffffff" active="{{isActive}}" active-mode="forwards">
+</progress>

@@ -4,6 +4,9 @@ Page ({
     show:0,
     tempFile:null,
     hasFile:false,
+    percent:0,
+    isActive:false,
+    see:false,
     text: [
       {
         title: "参展对象",
@@ -100,7 +103,13 @@ Page ({
       show: e.currentTarget.dataset.id+1,
     })
   },
+
   load: function (e) {
+    this.setData({
+      isDown: true,
+      percent: 100,
+      see:true
+    })
     this.setData({
       loadingHidden: false
     })
@@ -113,37 +122,71 @@ Page ({
           filePath: res.tempFilePath,
           success: function (res) {
             that.setData({
-              loadingHidden: true
+              loadingHidden: true,
+              see:false,
+              percent:0,
+              isActive:false
             })
           }
         })
       }
     })
   },
-  handleSubmit:function(){
+  formSubmit: function (e) {
     var self = this
-    wx.uploadFile({
-      url: 'https://www.fracturesr.xyz/wxServer/upload', // 仅为示例，非真实的接口地址
-      filePath: this.data.tempFile,
-      name: 'file',
-      formData: {
-        user: 'test'
-      },
-      success(res) {
-        const data = res.data
-        console.log('submit')
-        wx.showToast({
-          title: '提交成功',
-          icon: 'succes',
-          duration: 1000,
-          mask: true
-        })
-        self.setData({
-          hasFile:false,
-          tempFile:null
-        })
-      }
-    })
+    if (self.data.tempFile != null) {
+      wx.uploadFile({
+        url: 'https://www.fracturesr.xyz/wxServer/upload', // 仅为示例，非真实的接口地址
+        filePath: this.data.tempFile,
+        name: 'file',
+        formData: {
+          user: 'test'
+        },
+        success(res) {
+          wx.request({
+            url: 'https://www.fracturesr.xyz/wxServer/send',
+            header: {
+              'content-type': "application/x-www-form-urlencoded"
+            },
+            method: 'POST',
+            data: {
+              Applicant: e.detail.value[0],
+              PhoneNumber: e.detail.value[1],
+              Email: e.detail.value[2],
+              ProjectName: e.detail.value[3],
+              ProjectDetail: e.detail.value[4]
+            },
+            success: function (res) {
+              wx.showToast({
+                title: '提交成功',
+                icon: 'succes',
+                duration: 1000,
+                mask: true
+              })
+              self.setData({
+                hasFile: false,
+                tempFile: null
+              })
+            },
+            fail() {
+              wx.showToast({
+                title: '提交失败',
+                icon: 'fail',
+                duration: 1000,
+                mask: true
+              })
+            }
+          })
+        }
+      })
+    } else {
+      wx.showToast({
+        title: '请选择文件！',
+        icon: 'fail',
+        duration: 1000,
+        mask: true
+      })
+    }
   },
   upload: function(){
     var self = this

@@ -62,6 +62,8 @@
     "i-collapse": "../dist/collapse/index",
     "i-collapse-item": "../dist/collapse-item/index",
     "i-input": "../dist/input/index",
-    "i-notice-bar": "../dist/notice-bar/index"
+    "i-notice-bar": "../dist/notice-bar/index",
+    "i-action-sheet": "../dist/action-sheet/index",
+    "i-modal": "../dist/modal/index"
   }
 }

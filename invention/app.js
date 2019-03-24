@@ -2,14 +2,36 @@
 App({
   onLaunch: function () {
     // 展示本地存储能力
+    // wx.getStorageSync(key)，获取本地缓存
     var logs = wx.getStorageSync('logs') || []
+    // unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    var that = this
     // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: 'https://www.fracturesr.xyz/entry',
+          header: {
+            'content-type': "application/x-www-form-urlencoded"
+          },
+          method: 'POST',
+          data: {
+            code: res.code
+          },
+          success: function (res) {
+            wx.setStorage({
+              key: 'UserInfor',
+              data: res.data,
+            })
+            console.log(res.data)
+          },
+          fail() {
+            console.log("fail")
+          }
+        })
       }
     })
     // 获取用户信息
@@ -20,6 +42,7 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
+              // 设置globalData.userInfo
               this.globalData.userInfo = res.userInfo
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
@@ -29,20 +52,48 @@ App({
               }
             }
           })
+          // 获取本地异步缓存信息
+          wx.getStorage({
+            key: 'Information',
+            success: function (res) {
+              console.log("succeeded in get local information")
+            },
+            // 失败：即本地无当前用户信息
+            fail: function () {
+              // 向服务器发起POST
+              wx.request({
+                url: 'https://www.fracturesr.xyz/entry',
+                header: {
+                  'content-type': "application/x-www-form-urlencoded"
+                },
+                method: 'POST',
+                data: {
+                  'code': "res.data"
+                },
+                success(res) {
+                  wx.setStorage({
+                    key: 'Information',
+                    data: 'res.data',
+                  })
+                },
+                fail() {
+                  console.log("fail")
+                }
+
+              })
+            }
+          })
+        } else {
+          console.log("fail to get infor")
         }
       }
     })
   },
-  onShow:function(){
+  onLoad: function () {
 
-  },
-  onHide:function(){
 
-  },
-  onError:function(msg){
-    console.log(msg)
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
   }
 })

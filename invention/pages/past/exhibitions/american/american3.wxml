@@ -19,3 +19,5 @@
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
       <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>2016美国匹兹堡国际发明展通知.doc</view>
 </view>
+ <progress class="progress" percent="{{percent}}" show-info="{{see}}" stroke-width="6" activeColor="#53a9ff" backgroundColor="#ffffff" active="{{isActive}}" active-mode="forwards">
+</progress>
