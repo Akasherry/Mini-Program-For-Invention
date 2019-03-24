@@ -5,7 +5,7 @@
 <view class="layer" style='background-color:#53a9ff'>
   <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" bindtap='newFunc'>
     <swiper-item wx:for="{{3}}" wx:key class="{{cardCur==index?'cur':''}}">
-      <view class='bg-img shadow-blur' style="background-image:url(../../static/image/swiper{{index+1}}.jpg)"></view>
+      <view class='bg-img shadow-blur' style="background-image:url(https://www.fracturesr.xyz/download/%E9%80%9A%E7%9F%A5/swiper{{index+1}}.jpg)"></view>
     </swiper-item>
   </swiper>
 <scroll-view class="nav text-center shadow" style="margin-top:-30rpx">

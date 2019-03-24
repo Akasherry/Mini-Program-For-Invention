@@ -46,11 +46,11 @@ Page({
   handleSubmit: function () {
     var self = this
     wx.uploadFile({
-      url: 'https://www.fracturesr.xyz', // 仅为示例，非真实的接口地址
+      url: 'https://www.fracturesr.xyz/wxServer/upload', // 仅为示例，非真实的接口地址
       filePath: this.data.tempFile,
-      name: 'file',
+      name: 'image',
       formData: {
-        user: 'test'
+        PhoneNumber: '77775623888'
       },
       success(res) {
         const data = res.data

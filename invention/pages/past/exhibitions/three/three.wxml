@@ -1,7 +1,7 @@
 <!--pages/past/exhibitions/three/three.wxml-->
 <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" bindtap='newFunc'>
   <swiper-item wx:for="{{15}}" wx:key class="{{cardCur==index?'cur':''}}">
-    <view class='bg-img shadow-blur' style="background-image:url(../../../../static/image/e2/{{index+1}}.jpg)"></view>
+    <view class='bg-img shadow-blur' style="background-image:url(https://www.fracturesr.xyz/download/2017%E5%90%A6%E5%B1%B1%E5%B1%95%E4%BC%9A%E5%AE%A3%E4%BC%A0%E6%96%87%E4%BB%B6/%E5%A1%9E%E5%B0%94%E7%BB%B4%E4%BA%9A%E3%80%81%E5%85%8B%E7%BD%97%E5%9C%B0%E4%BA%9A/{{index+1}}.jpg)"></view>
   </swiper-item>
 </swiper>
 <view class="text-bold" style='font-size:30rpx;text-indent:20rpx'>塞尔维亚、克罗地亚及波兰三国同期国际发明展</view>
