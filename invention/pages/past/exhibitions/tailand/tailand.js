@@ -3,7 +3,9 @@ Page({
 
   data: {
     cardCur: 0,
-    
+    percent: 0,
+    isActive: false,
+    see: false,
   },
   onLoad() {
    
@@ -20,6 +22,11 @@ Page({
     })
   },
   download :function(url){
+    this.setData({
+      isDown: true,
+      percent: 100,
+      see: true
+    })
     wx.downloadFile({
       url: url,
       success(res) {
@@ -29,6 +36,11 @@ Page({
             filePath: res.tempFilePath
           })
         }
+        this.setData({
+          see: false,
+          percent: 0,
+          isActive: false
+        })
       }
     })
   },

@@ -4,6 +4,9 @@ Page ({
     show:0,
     tempFile:null,
     hasFile:false,
+    percent:0,
+    isActive:false,
+    see:false,
     text: [
       {
         title: "参展对象",
@@ -104,7 +107,13 @@ Page ({
       show: e.currentTarget.dataset.id+1,
     })
   },
+
   load: function (e) {
+    this.setData({
+      isDown: true,
+      percent: 100,
+      see:true
+    })
     this.setData({
       loadingHidden: false
     })
@@ -117,7 +126,10 @@ Page ({
           filePath: res.tempFilePath,
           success: function (res) {
             that.setData({
-              loadingHidden: true
+              loadingHidden: true,
+              see:false,
+              percent:0,
+              isActive:false
             })
           }
         })

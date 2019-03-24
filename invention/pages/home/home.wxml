@@ -34,12 +34,14 @@
       <text>{{item.text}}</text>
     </view>
     <view wx:if="{{show==11}}" style='height:650rpx'>
-        <view slot="content" i-class-content="green-text" bindtap='toMessage' wx:for="{{infos}}" wx:for-item="info" data-data="{{item.data}}" data-index="{{index}}" bindtap="load" data-route="{{info.url}}">
+        <view slot="content" i-class-content="green-text" wx:for="{{infos}}" wx:for-item="info" data-data="{{item.data}}" data-index="{{index}}" bindtap="load" data-route="{{info.url}}">
           <view style="margin-top:10rpx">
             <i-card title="{{info.name}}">
             </i-card>  
           </view>
         </view>
+        <progress class="progress" percent="{{percent}}" show-info="{{see}}" stroke-width="6" activeColor="#53a9ff" backgroundColor="#ffffff" active="{{isActive}}" active-mode="forwards">
+        </progress>
     </view>
     <view wx:if="{{show==21}}">
       <view class='text_block text-left padding' wx:for="{{text}}" wx:for-index="index" wx:for-item="each" style='text-indent: 40rpx; margin-top:20rpx;display:block;white-space: pre-line;line-height:150%;padding:0 0 36rpx 3%'>

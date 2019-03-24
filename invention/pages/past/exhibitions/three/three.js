@@ -3,7 +3,9 @@ Page({
 
   data: {
     cardCur: 0,
-
+    percent: 0,
+    isActive: false,
+    see: false,
   },
   onLoad() {
 
