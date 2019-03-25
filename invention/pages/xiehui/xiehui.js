@@ -182,7 +182,7 @@ Page({
           data: res.data,
         })
         console.log("在授权后取得用户信息成功")
-        if(res.data.flag!=true){// 服务器内没用用户的分组
+        if(res.data.HasGroup!=1){// 服务器内没用用户的分组
           self.setData({
             visible:true
           })
