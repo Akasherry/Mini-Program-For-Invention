@@ -19,7 +19,11 @@
     "pages/past/exhibitions/three/three",
     "pages/past/exhibitions/american/american3",
     "pages/past/exhibitions/tuerqi/tuerqi",
-    "pages/apply/apply"
+    "pages/apply/apply",
+    "pages/out/swiper1",
+    "pages/out/swiper2",
+    "pages/out/news0",
+    "pages/out/news1"
   ],
   "window": {
     "backgroundTextStyle": "light",

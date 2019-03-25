@@ -3,10 +3,10 @@
     2019年第22届莫斯科“阿基米德”国际发明展将于2019年3月26日到29日在俄罗斯首都莫斯科索科尔尼基会展中心）举行。;
 </i-notice-bar>
 <view class="layer" style='background-color:#53a9ff'>
-  <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" bindtap='newFunc'>
-    <swiper-item wx:for="{{3}}" wx:key class="{{cardCur==index?'cur':''}}">
-      <view class='bg-img shadow-blur' style="background-image:url(../../static/image/swiper{{index+1}}.jpg)"></view>
-    </swiper-item>
+  <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" bindtap='newFunc' data-cur="{{cardCur}}">
+    <swiper-item wx:for="{{2}}" wx:key class="{{cardCur==index?'cur':''}}">
+      <view class='bg-img shadow-blur' style="background-image:url(https://www.fracturesr.xyz/download/%E9%80%9A%E7%9F%A5/swiper{{index+1}}.jpg)"></view>
+    </swiper-item> 
   </swiper>
 <scroll-view class="nav text-center shadow" style="margin-top:-30rpx">
   <view class="cu-item {{0==TabCur?'text-white cur':''}}" bindtap='tabSelect' data-id="0">

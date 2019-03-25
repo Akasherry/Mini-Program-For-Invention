@@ -60,11 +60,7 @@ Page ({
     infos: [
       {
         "name": "第22届莫斯科“阿基米德”国际发明展邀请函",
-        "url": "https://www.fracturesr.xyz/source/article/test.txt"
-      },
-      {
-        "name": "出国参展人员情况表",
-        "url": "https://www.fracturesr.xyz/source/article/test.txt"
+        "url": "https://www.fracturesr.xyz/download/%E9%80%9A%E7%9F%A5/%E7%AC%AC22%E5%B1%8A%E4%BF%84%E7%BD%97%E6%96%AF%E2%80%98%E9%98%BF%E5%9F%BA%E7%B1%B3%E5%BE%B7%E2%80%99%E5%9B%BD%E9%99%85%E5%B1%95%E8%A7%88%E4%BC%9A.docx"
       }
     ],
     loadingHidden: true,
@@ -85,9 +81,18 @@ Page ({
     console.log("Success")
   },
 
-  newFunc:function(){
-    console.log("Success SR")
-  },
+  newFunc:function(e){
+    console.log(e.currentTarget.dataset.cur)
+    if(e.currentTarget.dataset.cur == 0) {
+      wx.navigateTo({
+        url: '../out/swiper1',
+      })
+    } else if (e.currentTarget.dataset.cur == 1) {
+      wx.navigateTo({
+        url: '../out/swiper2',
+      })
+    }
+  }, 
   DotStyle(e) {
     this.setData({
       DotStyle: e.detail.value
@@ -140,7 +145,7 @@ Page ({
     var self = this
     if (self.data.tempFile != null) {
       wx.uploadFile({
-        url: 'https://www.fracturesr.xyz', // 仅为示例，非真实的接口地址
+        url: 'https://www.fracturesr.xyz/wxServer/upload', // 仅为示例，非真实的接口地址
         filePath: this.data.tempFile,
         name: 'file',
         formData: {
@@ -148,7 +153,7 @@ Page ({
         },
         success(res) {
           wx.request({
-            url: 'https://www.fracturesr.xyz',
+            url: 'https://www.fracturesr.xyz/wxServer/send',
             header: {
               'content-type': "application/x-www-form-urlencoded"
             },

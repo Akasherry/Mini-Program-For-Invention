@@ -48,15 +48,15 @@ Page({
     var self = this
     if(self.data.tempFile!=null){
       wx.uploadFile({
-        url: 'https://www.fracturesr.xyz', // 仅为示例，非真实的接口地址
+        url: 'https://www.fracturesr.xyz/wxServer/upload', // 仅为示例，非真实的接口地址
         filePath: this.data.tempFile,
-        name: 'file',
+        name: 'image',
         formData: {
-          user: 'test'
+          PhoneNumber: e.detail.value[1]
         },
         success(res) {
           wx.request({
-            url: 'https://www.fracturesr.xyz',
+            url: 'https://www.fracturesr.xyz/wxServer/send',
             header: {
               'content-type': "application/x-www-form-urlencoded"
             },

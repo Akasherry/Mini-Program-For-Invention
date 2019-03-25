@@ -1,0 +1,6 @@
+<!--swiper2.wxml-->
+<view style="margin-left:100rpx">
+  <image src="https://www.fracturesr.xyz/download/%E9%80%9A%E7%9F%A5/junmin1.png"></image>
+		<image src="https://www.fracturesr.xyz/download/%E9%80%9A%E7%9F%A5/junmin2.png"></image>
+		<image src="https://www.fracturesr.xyz/download/%E9%80%9A%E7%9F%A5/junmin3.png"></image>
+</view>

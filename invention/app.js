@@ -11,9 +11,10 @@ App({
     // 登录
     wx.login({
       success: res => {
+        console.log("code"+res.code)
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: 'https://www.fracturesr.xyz/entry',
+          url: 'https://www.fracturesr.xyz/wxServer/login',
           header: {
             'content-type': "application/x-www-form-urlencoded"
           },
@@ -21,6 +22,7 @@ App({
           data: {
             code: res.code
           },
+          
           success: function (res) {
             wx.setStorage({
               key: 'UserInfor',
@@ -62,18 +64,19 @@ App({
             fail: function () {
               // 向服务器发起POST
               wx.request({
-                url: 'https://www.fracturesr.xyz/entry',
+                url: 'https://www.fracturesr.xyz/wxServer/login',
                 header: {
                   'content-type': "application/x-www-form-urlencoded"
                 },
                 method: 'POST',
                 data: {
-                  'code': "res.data"
+                  code: res.data
                 },
                 success(res) {
+                  console.log(res.data)
                   wx.setStorage({
                     key: 'Information',
-                    data: 'res.data',
+                    data: res.data,
                   })
                 },
                 fail() {

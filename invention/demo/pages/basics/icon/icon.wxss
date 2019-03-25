@@ -1,6 +1,0 @@
-page{
-  padding-top: 50px;
-}
-item.none{
-  display: none;
-}

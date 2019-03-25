@@ -1,8 +1,10 @@
-<!--pages/xiehui/xiehui.wxml-->
+﻿<!--pages/xiehui/xiehui.wxml-->
 <i-notice-bar icon="systemprompt" loop>
     2019年第22届莫斯科“阿基米德”国际发明展将于2019年3月26日到29日在俄罗斯首都莫斯科索科尔尼基会展中心）举行。
 </i-notice-bar>
-<i-modal title="分组" wx:if="{{visible}}" actions="{{actions}}" bind:click="handleClick">
+
+<i-modal title="分组" visible="{{visible}}" actions="{{actions}}" bind:click="handleClick">
+
     <view>请选择您的单位分组</view>
 </i-modal>
 <view class="userinfo" style='background-color:#53a9ff;height:300rpx '>
@@ -29,15 +31,15 @@
   </view>
 </view>
 <view class="cu-card article no-card">
-  <view wx:for="{{news}}" wx:for-index="idx" wx:for-item="news" wx:key class="cu-item shadow">
+  <view wx:for="{{news}}" wx:for-index="idx" wx:for-item="news" wx:key class="cu-item shadow" bindtap="news" data-flag="{{news.flag}}">
     <view class="text-cut title">{{news.title}}</view>
     <view class="content">
-      <image src="../../static/image/111.jpg" mode="aspectFill"></image>
+      <image src="{{news.image}}" mode="aspectFill"></image>
       <view class="desc">
         <view class='text-content'>{{news.content}}</view>
         <view>
-          <view class='cu-tag bg-blue light sm round'>标签1</view>
-          <view class='cu-tag bg-blue light sm round'>标签2</view>
+          <view class='cu-tag bg-blue light sm round'>{{news.tag1}}</view>
+          <view class='cu-tag bg-blue light sm round'>{{news.tag2}}</view>
         </view>
       </view>
     </view>
