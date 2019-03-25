@@ -22,6 +22,7 @@ Page({
     })
   },
   download: function () {
+    var that = this
     this.setData({
       isDown: true,
       percent: 100,
@@ -36,10 +37,15 @@ Page({
             filePath: res.tempFilePath
           })
         }
-        this.setData({
+        that.setData({
           see: false,
           percent: 0,
           isActive: false
+        })
+        wx.openDocument({
+          filePath: res.tempFilePath,
+          success: function (res) {
+          }
         })
       }
     })

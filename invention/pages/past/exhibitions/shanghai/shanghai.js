@@ -1,4 +1,4 @@
-// pages/past/exhibitions/tailand/tailand.js
+// pages/past/exhibitions/shanghai/shanghai.js
 Page({
 
   data: {
@@ -15,12 +15,14 @@ Page({
     })
   },
 
-  download: function (url) {
+  download: function (e) {
+    var that = this
     this.setData({
       isDown: true,
       percent: 100,
       see: true
     })
+    var url = e.currentTarget.dataset.url
     wx.downloadFile({
       url: url,
       success(res) {
@@ -30,10 +32,15 @@ Page({
             filePath: res.tempFilePath
           })
         }
-        this.setData({
+        that.setData({
           see: false,
           percent: 0,
           isActive: false
+        })
+        wx.openDocument({
+          filePath: res.tempFilePath,
+          success: function (res) {
+          }
         })
       }
     })

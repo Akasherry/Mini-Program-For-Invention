@@ -66,16 +66,17 @@ Page({
 
   },
 
-  download: function (url) {
+  download: function () {
+    var that = this
     this.setData({
       isDown: true,
       percent: 100,
       see: true
     })
     wx.downloadFile({
-      url: url,
+      url: "https://www.fracturesr.xyz/download/2018%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7/%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7%E5%9B%BD%E9%99%85%E5%8F%91%E6%98%8E%E8%8A%82.pdf",
       success(res) {
-        this.setData({
+        that.setData({
           see: false,
           percent: 0,
           isActive: false
@@ -86,24 +87,13 @@ Page({
             filePath: res.tempFilePath
           })
         }
+        wx.openDocument({
+          filePath: res.tempFilePath,
+          success: function (res) {
+            console.log("openDoc")
+          }
+        })
       }
     })
-  },
-  mutiDownload: function () {
-    this.setData({
-      isDown: true,
-      percent: 100,
-      see: true
-    })
-    var urls = new Array(5)
-    urls[0] = "https://www.fracturesr.xyz/download/2018%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7/%E4%B8%AD%E5%8F%91%E5%8D%8F%E5%AD%97%EF%BC%882018%EF%BC%8929%E5%8F%B7%E5%85%B3%E4%BA%8E%E5%8F%82%E5%8A%A0%E9%A6%96%E5%B1%8A%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7%E5%9B%BD%E9%99%85%E5%8F%91%E6%98%8E%E8%8A%82%E7%9A%84%E9%80%9A%E7%9F%A5%2817%29/%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7%E5%9B%BD%E9%99%85%E5%8F%91%E6%98%8E%E8%8A%82%201%20001.jpg"
-    urls[1] = "https://www.fracturesr.xyz/download/2018%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7/%E4%B8%AD%E5%8F%91%E5%8D%8F%E5%AD%97%EF%BC%882018%EF%BC%8929%E5%8F%B7%E5%85%B3%E4%BA%8E%E5%8F%82%E5%8A%A0%E9%A6%96%E5%B1%8A%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7%E5%9B%BD%E9%99%85%E5%8F%91%E6%98%8E%E8%8A%82%E7%9A%84%E9%80%9A%E7%9F%A5%2817%29/%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7%E5%9B%BD%E9%99%85%E5%8F%91%E6%98%8E%E8%8A%82%202%20001.jpg"
-    urls[2] = "https://www.fracturesr.xyz/download/2018%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7/%E4%B8%AD%E5%8F%91%E5%8D%8F%E5%AD%97%EF%BC%882018%EF%BC%8929%E5%8F%B7%E5%85%B3%E4%BA%8E%E5%8F%82%E5%8A%A0%E9%A6%96%E5%B1%8A%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7%E5%9B%BD%E9%99%85%E5%8F%91%E6%98%8E%E8%8A%82%E7%9A%84%E9%80%9A%E7%9F%A5%2817%29/%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7%E5%9B%BD%E9%99%85%E5%8F%91%E6%98%8E%E8%8A%82%203%20001.jpg"
-    urls[3] = "https://www.fracturesr.xyz/download/2018%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7/%E4%B8%AD%E5%8F%91%E5%8D%8F%E5%AD%97%EF%BC%882018%EF%BC%8929%E5%8F%B7%E5%85%B3%E4%BA%8E%E5%8F%82%E5%8A%A0%E9%A6%96%E5%B1%8A%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7%E5%9B%BD%E9%99%85%E5%8F%91%E6%98%8E%E8%8A%82%E7%9A%84%E9%80%9A%E7%9F%A5%2817%29/%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7%E5%9B%BD%E9%99%85%E5%8F%91%E6%98%8E%E8%8A%82%204%20001.jpg"
-    urls[4] = "https://www.fracturesr.xyz/download/2018%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7/%E4%B8%AD%E5%8F%91%E5%8D%8F%E5%AD%97%EF%BC%882018%EF%BC%8929%E5%8F%B7%E5%85%B3%E4%BA%8E%E5%8F%82%E5%8A%A0%E9%A6%96%E5%B1%8A%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7%E5%9B%BD%E9%99%85%E5%8F%91%E6%98%8E%E8%8A%82%E7%9A%84%E9%80%9A%E7%9F%A5%2817%29/%E7%BE%8E%E5%9B%BD%E7%A1%85%E8%B0%B7%E5%9B%BD%E9%99%85%E5%8F%91%E6%98%8E%E8%8A%82%205%20001.jpg"
-    var x
-    for (x in urls) {
-      this.download(urls[x])
-    }
   }
 })
