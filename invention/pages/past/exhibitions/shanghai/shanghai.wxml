@@ -22,15 +22,15 @@
     </view>
 </view>
 
-<view class="flex shadow align-center" bindtap='download1'>
+<view class="flex shadow align-center" bindtap='download' data-url='https://www.fracturesr.xyz/download/2018%E4%B8%8A%E6%B5%B7/2018%E7%AC%AC%E4%BA%8C%E5%B1%8A%E4%B8%AD%E5%9B%BD%EF%BC%88%E4%B8%8A%E6%B5%B7%EF%BC%89%E5%9B%BD%E9%99%85%E5%8F%91%E6%98%8E%E5%88%9B%E6%96%B0%E5%B1%95%E8%A7%88%E4%BC%9A%E7%9A%84%E9%80%9A%E7%9F%A5.pdf'>
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
       <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>2018第二届中国（上海）第五届国际发明创新展览会的通知.doc</view>
 </view>
-<view class="flex shadow align-center" bindtap='download2'>
+<view class="flex shadow align-center" bindtap='download' data-url='https://www.fracturesr.xyz/download/2018%E4%B8%8A%E6%B5%B7/2018%E7%AC%AC%E4%BA%8C%E5%B1%8A%E4%B8%AD%E5%9B%BD%EF%BC%88%E4%B8%8A%E6%B5%B7%EF%BC%89%E7%AC%AC%E4%BA%94%E5%B1%8A%E5%9B%BD%E9%99%85%E5%8F%91%E6%98%8E%E5%88%9B%E6%96%B0%E5%B1%95%E8%A7%88%E4%BC%9A%E7%9A%84%E9%80%9A%E7%9F%A5.doc'>
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
       <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>2018第二届中国（上海）国际发明创新展览会的通知.pdf</view>
 </view>
-<view class="flex shadow align-center" bindtap='download3'>
+<view class="flex shadow align-center" bindtap='download' data-url='https://www.fracturesr.xyz/download/2018%E4%B8%8A%E6%B5%B7/%E6%8E%88%E6%9D%83%E5%A7%94%E6%89%98%E4%B9%A6.pdf'>
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
       <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>授权委任书       </view>
 </view>

@@ -18,7 +18,7 @@
     </view>
 </view>
 
-<view class="flex shadow align-center" bindtap='mutiDownload'>
+<view class="flex shadow align-center" bindtap='download'>
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
       <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>《关于参加2018年泰国“发明者日”国际知识产权发明创新与技术展览会的通知》</view>
 </view>

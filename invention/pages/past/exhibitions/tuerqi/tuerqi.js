@@ -21,13 +21,14 @@ Page({
     })
   },
   download1: function () {
+	  var that = this;
     this.setData({
       loadingHidden: false
     })
     wx.downloadFile({
       url: 'https://www.fracturesr.xyz/download/2016%E5%9C%9F%E8%80%B3%E5%85%B6/%E9%82%AE%E4%BB%B6%E4%B8%93%E7%94%A8/%E5%9C%9F%E8%80%B3%E5%85%B6%E4%BC%8A%E6%96%AF%E5%9D%A6%E5%B8%83%E5%B0%94%E5%9B%BD%E9%99%85%E5%B1%95%E9%80%9A%E7%9F%A5.doc', // 仅为示例，并非真实的资源
       success(res) {
-        this.setData({
+        that.setData({
           loadingHidden: true
         })
         // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
@@ -36,10 +37,16 @@ Page({
             filePath: res.tempFilePath
           })
         }
+        wx.openDocument({
+          filePath: res.tempFilePath,
+          success: function (res) {
+          }
+        })
       }
     })
   },
   download2: function () {
+	  var that = this
     this.setData({
       loadingHidden: false
     })
@@ -52,13 +59,20 @@ Page({
             filePath: res.tempFilePath
           })
         }
-        this.setData({
+
+        that.setData({
           loadingHidden: true
+})
+        wx.openDocument({
+          filePath: res.tempFilePath,
+          success: function (res) {
+          }
         })
       }
-    })
+    
   },
   download3: function () {
+    var that = this
     this.setData({
       loadingHidden: false
     })
@@ -71,8 +85,14 @@ Page({
             filePath: res.tempFilePath
           })
         }
-        this.setData({
+
+        that.setData({
           loadingHidden: true
+        })
+        wx.openDocument({
+          filePath: res.tempFilePath,
+          success: function (res) {
+          }
         })
       }
     })

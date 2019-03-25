@@ -20,6 +20,7 @@ Page({
     })
   },
   download: function () {
+    var that = this
     this.setData({
       loadingHidden: false
     })
@@ -32,8 +33,13 @@ Page({
             filePath: res.tempFilePath
           })
         }
-        this.setData({
+        that.setData({
           loadingHidden: true
+        })
+        wx.openDocument({
+          filePath: res.tempFilePath,
+          success: function (res) {
+          }
         })
       }
     })
