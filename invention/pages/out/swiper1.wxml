@@ -1,0 +1,8 @@
+<!--swiper1.wxml-->
+<view style="margin-left:100rpx">
+  <image src="https://www.fracturesr.xyz/download/%E9%80%9A%E7%9F%A5/guigu1.jpg"></image>
+	<image src="https://www.fracturesr.xyz/download/%E9%80%9A%E7%9F%A5/guigu2.jpg"></image>
+	<image src="https://www.fracturesr.xyz/download/%E9%80%9A%E7%9F%A5/guigu3.jpg"></image>
+	<image src="https://www.fracturesr.xyz/download/%E9%80%9A%E7%9F%A5/guigu4.jpg"></image>
+	<image src="https://www.fracturesr.xyz/download/%E9%80%9A%E7%9F%A5/guigu5.jpg"></image>
+</view>

@@ -30,12 +30,20 @@ Page({
       }],
     news: [
       {
-        "title": "优秀参展商系列报道——中国宝武集团钢铁有限公司",
-        "content": ""
+        "title": "优秀参展商风采之长沙大红陶瓷发展有限责任公司",
+        "image": "https://www.fracturesr.xyz/download/%E9%80%9A%E7%9F%A5/changshared.jpg",
+        "content": "",
+        "tag1":"优秀参展商",
+        "tag2":"系列报道",
+        "flag":0
       },
       {
-        "title": "中国发明协会与亚太技术转移中心举办“技术促进持续发展磋商会”",
-        "content": ""
+        "title": "军民融合助力通航产业发展——陕西西北通用航空协会理事长张炎一行访问中国发明协会",
+        "image": "https://www.fracturesr.xyz/download/%E9%80%9A%E7%9F%A5/shanxiair.jpg",
+        "content": "",
+        "tag1":"发明协会",
+        "tag2":"军民融合",
+        "flag":1
       },
     ],
     actions: [
@@ -75,7 +83,7 @@ Page({
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
+      wx.getUserInfo({// 你有没有设置传回的data里有flag啊 golang的话成员首字母不能小写
         success: res => {
           app.globalData.userInfo = res.userInfo
           this.setData({
@@ -130,30 +138,43 @@ Page({
     })
   },
   handleClick({detail}){
+    var that = this;
     const groupIndex = detail.index;
     this.setData({
       index:groupIndex
     })
-    // 分组
-    wx.request({
-      url: 'https://www.fracturesr.xyz/',
-      header: {
-        'content-type': "application/x-www-form-urlencoded"
-      },
-      method: 'POST',
-      data: {
-        group: groupIndex
-      },
-      success(res) {
-        wx.setStorage({
-          key: 'Group',
-          data: 'groupIndex',
+    var openId;
+    wx.getStorage({
+      key: 'UserInfor',
+      success: function (res) {
+        openId = res.data.OpenId
+        console.log(openId)
+        // 分组
+        wx.request({
+          url: 'https://www.fracturesr.xyz/wxServer/setGroup',
+          header: {
+            'content-type': "application/x-www-form-urlencoded"
+          },
+          method: 'POST',
+          data: {
+            group: groupIndex,
+            openId: openId
+          },
+          success(res) {
+            wx.setStorage({
+              key: 'Group',
+              data: 'groupIndex',
+            })
+            that.setData({
+              visible: false
+            })
+          }
         })
-      }
+      },
     })
   },
   getUserInfo: function (e) {
-    var self = this
+    var self = this 
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -165,32 +186,49 @@ Page({
       success: function (res) {
         openId = res.data.OpenId
         console.log(openId)
-      },
-    })
-    wx.request({
-      url: 'https://www.fracturesr.xyz/',
-      header: {
-        'content-type': "application/x-www-form-urlencoded"
-      },
-      method: 'POST',
-      data: {
-        openId: openId
-      },
-      success(res) {
-        wx.setStorage({
-          key: 'Information',
-          data: res.data,
+
+        wx.request({
+          url: 'https://www.fracturesr.xyz/wxServer/getGroup',
+          header: {
+            'content-type': "application/x-www-form-urlencoded"
+          },
+          method: 'POST',
+          data: {
+            openId: openId
+          },
+          success(res) {
+            console.log(res.data)
+            wx.setStorage({
+              key: 'Information',
+              data: res.data,
+            })
+            console.log("在授权后取得用户信息成功")
+            if (res.data.HasGroup != '1') {// 服务器内没有用户的分组
+              self.setData({
+                visible: true
+              })
+              console.log(self.data.visible)
+            }
+            self.setData ({
+              index:parseInt(res.data.DivideIndex)
+            })
+          },
+          fail() {
+            console.log("在授权后取得用户信息失败")
+          }
         })
-        console.log("在授权后取得用户信息成功")
-        if(res.data.flag!=true){// 服务器内没用用户的分组
-          self.setData({
-            visible:true
-          })
-        }
       },
-      fail() {
-        console.log("在授权后取得用户信息失败")
-      }
     })
+  },
+  news: function(e) {
+    if(e.currentTarget.dataset.flag == 0) {
+      wx.navigateTo({
+        url: '../out/news0',
+      })
+    } else if (e.currentTarget.dataset.flag == 1) {
+      wx.navigateTo({
+        url: '../out/news1',
+      })
+    }
   }
 })

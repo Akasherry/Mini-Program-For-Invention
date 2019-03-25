@@ -81,9 +81,18 @@ Page ({
     console.log("Success")
   },
 
-  newFunc:function(){
-    console.log("Success SR")
-  },
+  newFunc:function(e){
+    console.log(e.currentTarget.dataset.cur)
+    if(e.currentTarget.dataset.cur == 0) {
+      wx.navigateTo({
+        url: '../out/swiper1',
+      })
+    } else if (e.currentTarget.dataset.cur == 1) {
+      wx.navigateTo({
+        url: '../out/swiper2',
+      })
+    }
+  }, 
   DotStyle(e) {
     this.setData({
       DotStyle: e.detail.value
