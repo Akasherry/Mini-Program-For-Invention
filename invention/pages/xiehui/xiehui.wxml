@@ -1,18 +1,17 @@
-﻿<!--pages/xiehui/xiehui.wxml-->
+<!--pages/xiehui/xiehui.wxml-->
 <i-notice-bar icon="systemprompt" loop>
     2019年第22届莫斯科“阿基米德”国际发明展将于2019年3月26日到29日在俄罗斯首都莫斯科索科尔尼基会展中心）举行。
 </i-notice-bar>
 
-<i-modal title="分组" visible="{{visible}}" actions="{{actions}}" bind:click="handleClick">
-
-    <view>请选择您的单位分组</view>
+<i-modal title="个人信息" visible="{{visible}}" actions="{{actions}}" bind:click="handleClick">
+    <view>请完善您的个人信息</view>
 </i-modal>
 <view class="userinfo" style='background-color:#53a9ff;height:300rpx '>
   <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
   <block wx:else>
     <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
     <view class="userinfo-nickname">{{userInfo.nickName}}</view>
-    <view class="groupIndex text-bold">用户分组：{{group[index]}}</view>
+    <view class="groupIndex text-bold">用户分组：{{groupName}}</view>
   </block>
 </view>
 <i-grid>

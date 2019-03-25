@@ -10,8 +10,9 @@ Page({
     hasUserInfo: false,
     visible:false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    index:5,
-    group:["企业","高校研究院","青少年","个人","其他","未选择"],
+    groupName:'',
+    group0: ['企业', '高校研究院', '青少年', '个人', '其他', '未分组'],
+    group:["填写信息"],
     menus1: [
       {
         "name": "协会简介",
@@ -47,17 +48,9 @@ Page({
       },
     ],
     actions: [
+     
       {
-        name: '企业'
-      },
-      {
-        name: '高校',
-      },
-      {
-        name: '个人',
-      },
-      {
-        name:'其他'
+        name:'填写信息'
       }
     ],
 
@@ -106,7 +99,10 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-
+    this.setData({
+      visible:false,
+      groupName:this.data.group0[app.globalData.groupIndex]
+    })
   },
 
   /**
@@ -138,40 +134,43 @@ Page({
     })
   },
   handleClick({detail}){
-    var that = this;
-    const groupIndex = detail.index;
-    this.setData({
-      index:groupIndex
+    wx.navigateTo({
+      url: '../information/information',
     })
-    var openId;
-    wx.getStorage({
-      key: 'UserInfor',
-      success: function (res) {
-        openId = res.data.OpenId
-        console.log(openId)
-        // 分组
-        wx.request({
-          url: 'https://www.fracturesr.xyz/wxServer/setGroup',
-          header: {
-            'content-type': "application/x-www-form-urlencoded"
-          },
-          method: 'POST',
-          data: {
-            group: groupIndex,
-            openId: openId
-          },
-          success(res) {
-            wx.setStorage({
-              key: 'Group',
-              data: 'groupIndex',
-            })
-            that.setData({
-              visible: false
-            })
-          }
-        })
-      },
-    })
+    // var that = this;
+    // const groupIndex = detail.index;
+    // this.setData({
+    //   index:groupIndex
+    // })
+    // var openId;
+    // wx.getStorage({
+    //   key: 'UserInfor',
+    //   success: function (res) {
+    //     openId = res.data.OpenId
+    //     console.log(openId)
+    //     // 分组
+    //     wx.request({
+    //       url: 'https://www.fracturesr.xyz/wxServer/setGroup',
+    //       header: {
+    //         'content-type': "application/x-www-form-urlencoded"
+    //       },
+    //       method: 'POST',
+    //       data: {
+    //         group: groupIndex,
+    //         openId: openId
+    //       },
+    //       success(res) {
+    //         wx.setStorage({
+    //           key: 'Group',
+    //           data: 'groupIndex',
+    //         })
+    //         that.setData({
+    //           visible: false
+    //         })
+    //       }
+    //     })
+    //   },
+    // })
   },
   getUserInfo: function (e) {
     var self = this 

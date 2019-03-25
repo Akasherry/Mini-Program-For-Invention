@@ -98,5 +98,7 @@ App({
   },
   globalData: {
     userInfo: null,
+    group:['企业','高校研究院','青少年','个人','其他','未分组'],
+    groupIndex:5
   }
 })

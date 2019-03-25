@@ -1,4 +1,7 @@
 <!--pages/past/exhibitions/tuerqi/tuerqi.wxml-->
+<loading hidden="{{loadingHidden}}">
+        加载中...
+</loading>
 <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" bindtap='newFunc'>
   <swiper-item wx:for="{{6}}" wx:key class="{{cardCur==index?'cur':''}}">
     <view class='bg-img shadow-blur' style="background-image:url(https://www.fracturesr.xyz/download/2016%E5%9C%9F%E8%80%B3%E5%85%B6/%E5%9C%9F%E8%80%B3%E5%85%B6/{{index+1}}.jpg)"></view>

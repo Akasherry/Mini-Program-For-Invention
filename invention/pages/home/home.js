@@ -4,9 +4,6 @@ Page ({
     show:0,
     tempFile:null,
     hasFile:false,
-    percent:0,
-    isActive:false,
-    see:false,
     text: [
       {
         title: "参展对象",
@@ -115,11 +112,6 @@ Page ({
 
   load: function (e) {
     this.setData({
-      isDown: true,
-      percent: 100,
-      see:true
-    })
-    this.setData({
       loadingHidden: false
     })
     var that = this;
@@ -132,9 +124,6 @@ Page ({
           success: function (res) {
             that.setData({
               loadingHidden: true,
-              see:false,
-              percent:0,
-              isActive:false
             })
           }
         })
@@ -168,7 +157,7 @@ Page ({
             success: function (res) {
               wx.showToast({
                 title: '提交成功',
-                icon: 'succes',
+                icon: 'success',
                 duration: 1000,
                 mask: true
               })
@@ -180,7 +169,7 @@ Page ({
             fail() {
               wx.showToast({
                 title: '提交失败',
-                icon: 'fail',
+                icon: 'loading',
                 duration: 1000,
                 mask: true
               })
@@ -189,11 +178,39 @@ Page ({
         }
       })
     } else {
-      wx.showToast({
-        title: '请选择文件！',
-        icon: 'fail',
-        duration: 1000,
-        mask: true
+      wx.request({
+        url: 'https://www.fracturesr.xyz/wxServer/send',
+        header: {
+          'content-type': "application/x-www-form-urlencoded"
+        },
+        method: 'POST',
+        data: {
+          Applicant: e.detail.value[0],
+          PhoneNumber: e.detail.value[1],
+          Email: e.detail.value[2],
+          ProjectName: e.detail.value[3],
+          ProjectDetail: e.detail.value[4]
+        },
+        success: function (res) {
+          wx.showToast({
+            title: '提交成功',
+            icon: 'succes',
+            duration: 1000,
+            mask: true
+          })
+          self.setData({
+            hasFile: false,
+            tempFile: null
+          })
+        },
+        fail() {
+          wx.showToast({
+            title: '提交失败',
+            icon: 'loading',
+            duration: 1000,
+            mask: true
+          })
+        }
       })
     }
   },

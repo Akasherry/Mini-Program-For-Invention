@@ -23,7 +23,8 @@
     "pages/out/swiper1",
     "pages/out/swiper2",
     "pages/out/news0",
-    "pages/out/news1"
+    "pages/out/news1",
+    "pages/information/information"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -68,6 +69,8 @@
     "i-input": "../dist/input/index",
     "i-notice-bar": "../dist/notice-bar/index",
     "i-action-sheet": "../dist/action-sheet/index",
-    "i-modal": "../dist/modal/index"
+    "i-modal": "../dist/modal/index",
+    "i-radio-group": "../dist/radio-group/index",
+    "i-radio": "../dist/radio/index"
   }
 }

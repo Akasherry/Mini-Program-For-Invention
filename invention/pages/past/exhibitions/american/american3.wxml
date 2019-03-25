@@ -1,4 +1,7 @@
 <!--pages/past/exhibitions/american/american3.wxml-->
+<loading hidden="{{loadingHidden}}">
+        加载中...
+</loading>
 <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" bindtap='newFunc'>
   <swiper-item wx:for="{{8}}" wx:key class="{{cardCur==index?'cur':''}}">
     <view class='bg-img shadow-blur' style="background-image:url(https://www.fracturesr.xyz/download/2017%E7%BE%8E%E5%9B%BD/2016%E7%BE%8E%E5%9B%BD/{{index+1}}.jpg)"></view>
@@ -19,5 +22,3 @@
       <view class='icon-formfill text-black padding-lg margin-xs' style='font-size:79rpx'></view>
       <view class='padding-sm margin-xs' style='color:black;margin-left:-30rpx'>2016美国匹兹堡国际发明展通知.doc</view>
 </view>
- <progress class="progress" percent="{{percent}}" show-info="{{see}}" stroke-width="6" activeColor="#53a9ff" backgroundColor="#ffffff" active="{{isActive}}" active-mode="forwards">
-</progress>

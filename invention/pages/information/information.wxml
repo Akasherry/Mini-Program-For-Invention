@@ -1,0 +1,17 @@
+<!--pages/information/information.wxml-->
+<view>
+  <i-panel title="完善用户信息">
+    <i-input value="{{ value1 }}" title="姓名" autofocus placeholder="请输入姓名" />
+    <i-input value="{{ value2 }}" type="number" title="联系电话" placeholder="请输入手机号" />
+    <i-panel title="选择分组">
+      <i-radio-group current="{{current}}" bindchange="handleChange">
+          <i-radio wx:for="{{group}}" position="left" wx:key="{{item.id}}" value="{{item.name}}">
+          </i-radio>
+      </i-radio-group>
+    </i-panel>
+
+    <i-input value="{{ value3 }}" wx:if="{{hasJob}}" title="单位" placeholder="请输入您所在单位" />
+    <i-input value="{{ value3 }}" wx:if="{{hasSchool}}" title="单位" placeholder="所在高校或研究机构" />
+  </i-panel>
+  <i-button bind:click="handleClick">填写完成</i-button>
+</view>
