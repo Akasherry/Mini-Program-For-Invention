@@ -69,6 +69,7 @@ Page({
           }
         })
       }
+    })
     
   },
   download3: function () {

@@ -55,6 +55,18 @@ Page({
           PhoneNumber: e.detail.value[1]
         },
         success(res) {
+          let i;
+          let canSend = true;
+          for (i = 0; i <= 4; i++) {
+            if (e.detail.value[i] == null) {
+              canSend = false;
+            } else {
+              if (e.detail.value[i].length == 0) {
+                canSend = false;
+              }
+            }
+          }
+          if (canSend == true) {
           wx.request({
             url: 'https://www.fracturesr.xyz/wxServer/send',
             header: {
@@ -83,15 +95,34 @@ Page({
             fail() {
               wx.showToast({
                 title: '提交失败',
-                icon: 'loading',
+                icon: 'none',
                 duration: 1000,
                 mask: true
               })
             }
           })
+          } else {
+            wx.showToast({
+              title: '请填写完整信息！',
+              duration: 1000,
+              icon: "none"
+            })
+          }
         }
       })
     }else{
+      let i;
+      let canSend = true;
+      for (i = 0; i <= 4; i++) {
+        if (e.detail.value[i] == null) {
+          canSend = false;
+        } else {
+          if (e.detail.value[i].length == 0) {
+            canSend = false;
+          }
+        }
+      }
+      if (canSend == true) {
       wx.request({
         url: 'https://www.fracturesr.xyz/wxServer/send',
         header: {
@@ -120,12 +151,19 @@ Page({
         fail() {
           wx.showToast({
             title: '提交失败',
-            icon: 'loading',
+            icon: 'none',
             duration: 1000,
             mask: true
           })
         }
       })
+      } else {
+        wx.showToast({
+          title: '请填写完整信息！',
+          duration: 1000,
+          icon: "none"
+        })
+      }
     }
     
   },

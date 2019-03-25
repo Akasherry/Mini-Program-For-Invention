@@ -141,77 +141,149 @@ Page ({
           user: 'test'
         },
         success(res) {
-          wx.request({
-            url: 'https://www.fracturesr.xyz/wxServer/send',
-            header: {
-              'content-type': "application/x-www-form-urlencoded"
-            },
-            method: 'POST',
-            data: {
-              Applicant: e.detail.value[0],
-              PhoneNumber: e.detail.value[1],
-              Email: e.detail.value[2],
-              ProjectName: e.detail.value[3],
-              ProjectDetail: e.detail.value[4]
-            },
-            success: function (res) {
-              wx.showToast({
-                title: '提交成功',
-                icon: 'success',
-                duration: 1000,
-                mask: true
-              })
-              self.setData({
-                hasFile: false,
-                tempFile: null
-              })
-            },
-            fail() {
-              wx.showToast({
-                title: '提交失败',
-                icon: 'loading',
-                duration: 1000,
-                mask: true
-              })
+          let i;
+          let canSend = true;
+          for(i=0;i<=4;i++){
+            if (e.detail.value[i] == null) {
+              canSend = false;
+            } else {
+              if (e.detail.value[i].length == 0) {
+                canSend = false;
+              }
             }
-          })
+          }
+          if(canSend==true){
+            wx.request({
+              url: 'https://www.fracturesr.xyz/wxServer/send',
+              header: {
+                'content-type': "application/x-www-form-urlencoded"
+              },
+              method: 'POST',
+              data: {
+                Applicant: e.detail.value[0],
+                PhoneNumber: e.detail.value[1],
+                Email: e.detail.value[2],
+                ProjectName: e.detail.value[3],
+                ProjectDetail: e.detail.value[4]
+              },
+              success: function (res) {
+                wx.showToast({
+                  title: '提交成功',
+                  icon: 'success',
+                  duration: 1000,
+                  mask: true
+                })
+                self.setData({
+                  hasFile: false,
+                  tempFile: null
+                })
+              },
+              fail() {
+                wx.showToast({
+                  title: '提交失败',
+                  icon: 'loading',
+                  duration: 1000,
+                  mask: true
+                })
+              }
+            })
+          } else {
+            wx.showToast({
+              title: '请填写完整信息！',
+              duration: 1000,
+              icon: "none"
+            })
+          }
+          // wx.request({
+          //   url: 'https://www.fracturesr.xyz/wxServer/send',
+          //   header: {
+          //     'content-type': "application/x-www-form-urlencoded"
+          //   },
+          //   method: 'POST',
+          //   data: {
+          //     Applicant: e.detail.value[0],
+          //     PhoneNumber: e.detail.value[1],
+          //     Email: e.detail.value[2],
+          //     ProjectName: e.detail.value[3],
+          //     ProjectDetail: e.detail.value[4]
+          //   },
+          //   success: function (res) {
+          //     wx.showToast({
+          //       title: '提交成功',
+          //       icon: 'success',
+          //       duration: 1000,
+          //       mask: true
+          //     })
+          //     self.setData({
+          //       hasFile: false,
+          //       tempFile: null
+          //     })
+          //   },
+          //   fail() {
+          //     wx.showToast({
+          //       title: '提交失败',
+          //       icon: 'loading',
+          //       duration: 1000,
+          //       mask: true
+          //     })
+          //   }
+          // })
         }
       })
     } else {
-      wx.request({
-        url: 'https://www.fracturesr.xyz/wxServer/send',
-        header: {
-          'content-type': "application/x-www-form-urlencoded"
-        },
-        method: 'POST',
-        data: {
-          Applicant: e.detail.value[0],
-          PhoneNumber: e.detail.value[1],
-          Email: e.detail.value[2],
-          ProjectName: e.detail.value[3],
-          ProjectDetail: e.detail.value[4]
-        },
-        success: function (res) {
-          wx.showToast({
-            title: '提交成功',
-            icon: 'succes',
-            duration: 1000,
-            mask: true
-          })
-          self.setData({
-            hasFile: false,
-            tempFile: null
-          })
-        },
-        fail() {
-          wx.showToast({
-            title: '提交失败',
-            icon: 'loading',
-            duration: 1000,
-            mask: true
-          })
+      let i;
+      let canSend = true;
+      for (i = 0; i <= 4; i++) {
+        if (e.detail.value[i]==null) {
+          canSend = false;
+        }else{
+          if (e.detail.value[i].length==0){
+            canSend = false;
+          }
         }
-      })
+      }
+      if(canSend){
+        wx.request({
+          url: 'https://www.fracturesr.xyz/wxServer/send',
+          header: {
+            'content-type': "application/x-www-form-urlencoded"
+          },
+          method: 'POST',
+          data: {
+            Applicant: e.detail.value[0],
+            PhoneNumber: e.detail.value[1],
+            Email: e.detail.value[2],
+            ProjectName: e.detail.value[3],
+            ProjectDetail: e.detail.value[4]
+          },
+          success: function (res) {
+            wx.showToast({
+              title: '提交成功',
+              icon: 'succes',
+              duration: 1000,
+              mask: true
+            })
+            self.setData({
+              hasFile: false,
+              tempFile: null
+            })
+          },
+          fail() {
+            wx.showToast({
+              title: '提交失败',
+              icon: 'loading',
+              duration: 1000,
+              mask: true
+            })
+          }
+        })
+      }else{
+        wx.showToast({
+          title: '请填写完整信息！',
+          duration:1000,
+          icon:'none'
+        })
+      }
     }
   },
   upload: function(){
