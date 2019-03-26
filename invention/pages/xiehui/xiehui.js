@@ -137,40 +137,6 @@ Page({
     wx.navigateTo({
       url: '../information/information',
     })
-    // var that = this;
-    // const groupIndex = detail.index;
-    // this.setData({
-    //   index:groupIndex
-    // })
-    // var openId;
-    // wx.getStorage({
-    //   key: 'UserInfor',
-    //   success: function (res) {
-    //     openId = res.data.OpenId
-    //     console.log(openId)
-    //     // 分组
-    //     wx.request({
-    //       url: 'https://www.fracturesr.xyz/wxServer/setGroup',
-    //       header: {
-    //         'content-type': "application/x-www-form-urlencoded"
-    //       },
-    //       method: 'POST',
-    //       data: {
-    //         group: groupIndex,
-    //         openId: openId
-    //       },
-    //       success(res) {
-    //         wx.setStorage({
-    //           key: 'Group',
-    //           data: 'groupIndex',
-    //         })
-    //         that.setData({
-    //           visible: false
-    //         })
-    //       }
-    //     })
-    //   },
-    // })
   },
   getUserInfo: function (e) {
     var self = this 
@@ -209,8 +175,9 @@ Page({
               console.log(self.data.visible)
             }
             self.setData ({
-              index:parseInt(res.data.DivideIndex)
-            })
+              groupName: self.data.group0[parseInt(res.data.DivideIndex)]
+            }),
+            app.globalData.groupIndex=self.data.group0[parseInt(res.data.DivideIndex)]
           },
           fail() {
             console.log("在授权后取得用户信息失败")

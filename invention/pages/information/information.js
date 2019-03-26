@@ -103,7 +103,7 @@ Page({
         openId = res.data.OpenId
         // 分组
         wx.request({
-          url: 'https://www.fracturesr.xyz/wxServer/setGroup',
+          url: 'https://www.fracturesr.xyz/wxServer/setInfo',
           header: {
             'content-type': "application/x-www-form-urlencoded"
           },

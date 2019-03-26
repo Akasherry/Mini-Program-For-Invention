@@ -13,8 +13,11 @@ import (
 
 type User struct {
 	OpenId      string
+	PhoneNumber string
+	Org         string
 	HasGroup    int8
 	DivideIndex string
+	Name        string
 }
 
 func Login(w http.ResponseWriter, r *http.Request) {
@@ -31,17 +34,21 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	defer db.Close()
 
 	var AUser User
-	var order = "SELECT OpenId,HasGroup,DivideIndex FROM User WHERE OpenId='" + ATencentRes.Openid + "';"
-	err = db.QueryRow(order).Scan(&AUser.OpenId, &AUser.HasGroup, &AUser.DivideIndex)
+	var order = "SELECT * FROM User WHERE OpenId='" + ATencentRes.Openid + "';"
+	err = db.QueryRow(order).Scan(&AUser.OpenId, &AUser.PhoneNumber, &AUser.Org, &AUser.HasGroup, &AUser.DivideIndex, &AUser.Name)
 	log.Println(err)
 	if err != nil {
-		w.Write([]byte("New User"))
-		stmt, err := db.Prepare("INSERT INTO User(OpenId,HasGroup,DivideIndex) VALUES(?,?,?);")
+		stmt, err := db.Prepare("INSERT INTO User(OpenId,PhoneNumber,Org,HasGroup,DivideIndex,Name) VALUES(?,?,?,?,?,?);")
 		if err != nil {
 			panic(err)
 		}
-		stmt.Exec(ATencentRes.Openid, 0, "-1")
-		return
+		stmt.Exec(ATencentRes.Openid, "nil", "nil", 0, "nil", "nil")
+		AUser.OpenId = ATencentRes.Openid
+		AUser.PhoneNumber = "nil"
+		AUser.Org = "nil"
+		AUser.HasGroup = 0
+		AUser.DivideIndex = "nil"
+		AUser.Name = "nil"
 	}
 
 	output, err := json.MarshalIndent(&AUser, "", "\t\t")
@@ -57,13 +64,13 @@ func GetGroupFromOpenId(w http.ResponseWriter, r *http.Request) {
 
 	var AUser User
 	var order = "SELECT * FROM User WHERE OpenId='" + r.PostFormValue("openId") + "';"
-	err = db.QueryRow(order).Scan(&AUser.OpenId, &AUser.HasGroup, &AUser.DivideIndex)
+	err = db.QueryRow(order).Scan(&AUser.OpenId, &AUser.PhoneNumber, &AUser.Org, &AUser.HasGroup, &AUser.DivideIndex, &AUser.Name)
 
 	output, err := json.MarshalIndent(&AUser, "", "\t\t")
 	w.Write(output)
 }
 
-func SetGroup(w http.ResponseWriter, r *http.Request) {
+func SetInfo(w http.ResponseWriter, r *http.Request) {
 	db, err := sql.Open("sqlite3", "./SQLite3/inventionClient.db")
 	if err != nil {
 		panic(err)
@@ -76,10 +83,29 @@ func SetGroup(w http.ResponseWriter, r *http.Request) {
 	}
 	stmt.Exec(1, r.PostFormValue("openId"))
 
+	stmt, err = db.Prepare("UPDATE User set Name=? where OpenId=?")
+	if err != nil {
+		panic(err)
+	}
+	stmt.Exec(r.PostFormValue("name"), r.PostFormValue("openId"))
+
 	stmt, err = db.Prepare("UPDATE User set DivideIndex=? where OpenId=?")
 	if err != nil {
 		panic(err)
 	}
 	stmt.Exec(r.PostFormValue("group"), r.PostFormValue("openId"))
+
+	stmt, err = db.Prepare("UPDATE User set PhoneNumber=? where OpenId=?")
+	if err != nil {
+		panic(err)
+	}
+	stmt.Exec(r.PostFormValue("phone"), r.PostFormValue("openId"))
+
+	stmt, err = db.Prepare("UPDATE User set Org=? where OpenId=?")
+	if err != nil {
+		panic(err)
+	}
+	stmt.Exec(r.PostFormValue("groupName"), r.PostFormValue("openId"))
+
 	w.Write([]byte("Success"))
 }

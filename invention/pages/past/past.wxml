@@ -1,6 +1,6 @@
 <!--pages/past/past.wxml-->
 <i-notice-bar icon="systemprompt" loop>
-    2019年第22届莫斯科“阿基米德”国际发明展将于2019年3月26日到29日在俄罗斯首都莫斯科索科尔尼基会展中心）举行。
+    2019年第22届莫斯科“阿基米德”国际发明展将于2019年3月26日到29日在俄罗斯首都莫斯科索科尔尼基会展中心举行。
 </i-notice-bar>
 <view style='background-color:#53a9ff'>
   <image src='https://image.weilanwl.com/gif/wave.gif' mode='scaleToFill' class='gif-black response' style='height:100rpx'></image>

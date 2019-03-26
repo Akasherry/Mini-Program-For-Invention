@@ -4,7 +4,7 @@
 </loading>
 
 <i-notice-bar icon="systemprompt" loop>
-    2019年第22届莫斯科“阿基米德”国际发明展将于2019年3月26日到29日在俄罗斯首都莫斯科索科尔尼基会展中心）举行。;
+    2019年第22届莫斯科“阿基米德”国际发明展将于2019年3月26日到29日在俄罗斯首都莫斯科索科尔尼基会展中心举行。;
 </i-notice-bar>
 <view class="layer" style='background-color:#53a9ff'>
   <swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" bindtap='newFunc' data-cur="{{cardCur}}">
@@ -64,11 +64,11 @@
       <form class="page__bd" bindsubmit="formSubmit" bindreset="formReset">
         <view class="cu-form-group margin-top">
           <view class='title '>联系人</view>
-          <input class='radius text-left' name='input'></input>
+          <input class='radius text-left' name='contact'></input>
         </view>
         <view class="cu-form-group">
           <view class='title'>手机号码</view>
-          <input class='radius text-left' name='input'></input>
+          <input class='radius text-left' name='phone'></input>
           <view class="cu-capsule radius">
             <view class='cu-tag bg-blue '>
               +86
@@ -80,15 +80,15 @@
         </view>
         <view class="cu-form-group">
           <view class='title'>邮箱</view>
-          <input class='radius text-left' name='input'></input>
+          <input class='radius text-left' name='mail'></input>
         </view>
         <view class="cu-form-group">
           <view class='title'>项目名称</view>
-          <input class='radius text-left' name='input'></input>
+          <input class='radius text-left' name='pn'></input>
         </view>
         <view class="cu-form-group">
           <view class='title'>项目介绍</view>
-          <input class='radius text-left' name='input'></input>
+          <input class='radius text-left' name='pd'></input>
           <view class="radius bg-blue" style="color:white; padding:5rpx" bindtap="upload">{{!hasFile? "上传附件":"已添加附件"}}</view>
         </view>
         <view class="padding flex flex-direction">
