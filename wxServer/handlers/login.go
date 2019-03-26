@@ -77,13 +77,16 @@ func SetInfo(w http.ResponseWriter, r *http.Request) {
 	}
 	defer db.Close()
 	log.Println(r.PostFormValue("group"), r.PostFormValue("openId"))
-	stmt, err := db.Prepare("UPDATE User set HasGroup=? where OpenId=?")
-	if err != nil {
-		panic(err)
-	}
-	stmt.Exec(1, r.PostFormValue("openId"))
 
-	stmt, err = db.Prepare("UPDATE User set Name=? where OpenId=?")
+	if r.PostFormValue("name") != "" && r.PostFormValue("phone") != "" {
+		stmt, err := db.Prepare("UPDATE User set HasGroup=? where OpenId=?")
+		if err != nil {
+			panic(err)
+		}
+		stmt.Exec(1, r.PostFormValue("openId"))
+	}
+
+	stmt, err := db.Prepare("UPDATE User set Name=? where OpenId=?")
 	if err != nil {
 		panic(err)
 	}
