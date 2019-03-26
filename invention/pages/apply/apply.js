@@ -57,7 +57,7 @@ Page({
         success(res) {
           let i;
           let canSend = true;
-          for (i = 0; i <= 4; i++) {
+          for (i = 0; i <= 3; i++) {
             if (e.detail.value[i] == null) {
               canSend = false;
             } else {
@@ -113,7 +113,7 @@ Page({
     }else{
       let i;
       let canSend = true;
-      for (i = 0; i <= 4; i++) {
+      for (i = 0; i <= 3; i++) {
         if (e.detail.value[i] == null) {
           canSend = false;
         } else {
