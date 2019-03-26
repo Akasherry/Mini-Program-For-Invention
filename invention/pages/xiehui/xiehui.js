@@ -60,10 +60,21 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function () {
+    var self = this
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
+      })
+      wx.getStorage({
+        key: 'UserInfor',
+        success: function(res) {
+          app.globalData.groupIndex=res.data.DivideIndex
+          console.log(res.data.DivideIndex)
+          self.setData({
+            groupName: self.data.group0[app.globalData.groupIndex-1]
+          })
+        },
       })
     } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
@@ -101,7 +112,7 @@ Page({
   onShow: function () {
     this.setData({
       visible:false,
-      groupName:this.data.group0[app.globalData.groupIndex]
+      groupName:this.data.group0[app.globalData.groupIndex-1]
     })
   },
 
@@ -172,12 +183,12 @@ Page({
               self.setData({
                 visible: true
               })
-              console.log(self.data.visible)
+              // console.log(self.data.visible)
             }
-            self.setData ({
-              groupName: self.data.group0[parseInt(res.data.DivideIndex)]
-            }),
-            app.globalData.groupIndex=self.data.group0[parseInt(res.data.DivideIndex)]
+            // self.setData ({
+            //   groupName: self.data.group0[parseInt(res.data.DivideIndex)]
+            // }),
+            // app.globalData.groupIndex=self.data.group0[parseInt(res.data.DivideIndex)]
           },
           fail() {
             console.log("在授权后取得用户信息失败")

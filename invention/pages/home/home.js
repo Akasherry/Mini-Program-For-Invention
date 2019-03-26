@@ -165,7 +165,7 @@ Page ({
         fail() {
           wx.showToast({
             title: '提交失败',
-            icon: 'loading',
+            icon: 'none',
             duration: 1000,
             mask: true
           })

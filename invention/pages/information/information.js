@@ -93,15 +93,55 @@ Page({
       })
     }
   },
-  handleClick:function(){
-    var that = this;
-    const groupIndex = that.data.groupNumber;
+  // handleClick:function(){
+  //   var that = this;
+  //   const groupIndex = that.data.groupNumber;
+  //   var openId;
+  //   wx.getStorage({
+  //     key: 'UserInfor',
+  //     success: function (res) {
+  //       openId = res.data.OpenId
+  //       // 分组
+  //       wx.request({
+  //         url: 'https://www.fracturesr.xyz/wxServer/setInfo',
+  //         header: {
+  //           'content-type': "application/x-www-form-urlencoded"
+  //         },
+  //         method: 'POST',
+  //         data: {
+  //           group: groupIndex,
+  //           openId: openId,
+  //           name:that.data.value1,
+  //           phone:that.data.value2,
+  //           groupName:that.data.value3
+  //         },
+  //         success(res) {
+  //           wx.setStorage({
+  //             key: 'Group',
+  //             data: 'groupIndex',
+  //           })
+  //           app.globalData.groupIndex = groupIndex-1
+  //           console.log(app.globalData.groupIndex)
+  //           wx.showToast({
+  //             title: '信息成功提交',
+  //           })
+  //           wx.navigateBack({
+              
+  //           })
+  //         }
+  //       })
+  //     },
+  //   })
+  // }
+  formSubmit: function (e) {
+    var self = this;
+    const groupIndex = self.data.groupNumber;
     var openId;
     wx.getStorage({
       key: 'UserInfor',
       success: function (res) {
         openId = res.data.OpenId
-        // 分组
+        let i
         wx.request({
           url: 'https://www.fracturesr.xyz/wxServer/setInfo',
           header: {
@@ -111,11 +151,11 @@ Page({
           data: {
             group: groupIndex,
             openId: openId,
-            name:that.data.value1,
-            phone:that.data.value2,
-            groupName:that.data.value3
+            name: e.detail.value.contact,
+            phone: e.detail.value.phone,
+            groupName: e.detail.value.gname,
           },
-          success(res) {
+          success: function (res) {
             wx.setStorage({
               key: 'Group',
               data: 'groupIndex',
@@ -126,11 +166,20 @@ Page({
               title: '信息成功提交',
             })
             wx.navigateBack({
-              
+
+            })
+          },
+          fail() {
+            wx.showToast({
+              title: '提交失败',
+              icon: 'none',
+              duration: 1000,
+              mask: true
             })
           }
         })
-      },
-    })
+      }
+      })
+
   }
 })

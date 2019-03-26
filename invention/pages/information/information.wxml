@@ -1,6 +1,44 @@
 <!--pages/information/information.wxml-->
 <view>
-  <i-panel title="完善用户信息">
+  <form class="page__bd" bindsubmit="formSubmit" bindreset="formReset">
+        <view class="cu-form-group margin-top">
+          <view class='title '>联系人</view>
+          <input class='radius text-left' name='contact'></input>
+        </view>
+        <view class="cu-form-group">
+          <view class='title'>联系电话</view>
+          <input class='radius text-left' name='phone'></input>
+          <view class="cu-capsule radius">
+            <view class='cu-tag bg-blue '>
+              +86
+            </view>
+            <view class="cu-tag line-blue">
+              中国大陆
+            </view>
+          </view>
+        </view>
+        <i-panel title="选择分组">
+          <i-radio-group current="{{current}}" bindchange="handleChange">
+              <i-radio wx:for="{{group}}" position="left" wx:key="{{item.id}}" value="{{item.name}}">
+              </i-radio>
+          </i-radio-group>
+        </i-panel>
+        <view class="cu-form-group" wx:if="{{hasJob}}" >
+          <view class='title'>单位名称</view>
+          <input class='radius text-left' name='gname'></input>
+        </view>
+        <view class="cu-form-group" wx:if="{{hasSchool}}" >
+          <view class='title'>高校名称</view>
+          <input class='radius text-left' name='gname'></input>
+        </view>
+        
+        <view class="padding flex flex-direction">
+          <button form-type="submit" class="cu-btn margin-tb-sm lg" style='background-color:#5cadff; color:white'>提交</button>
+        </view>
+        </form>
+      </view>
+
+  <!-- <i-panel title="完善用户信息">
     <i-input value="{{ value1 }}" title="姓名" autofocus placeholder="请输入姓名" />
     <i-input value="{{ value2 }}" type="number" title="联系电话" placeholder="请输入手机号" />
     <i-panel title="选择分组">
@@ -13,5 +51,5 @@
     <i-input value="{{ value3 }}" wx:if="{{hasJob}}" title="单位" placeholder="请输入您所在单位" />
     <i-input value="{{ value3 }}" wx:if="{{hasSchool}}" title="单位" placeholder="所在高校或研究机构" />
   </i-panel>
-  <i-button bind:click="handleClick">填写完成</i-button>
-</view>
+  <i-button bind:click="handleClick">填写完成</i-button> -->
+
