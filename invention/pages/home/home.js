@@ -131,159 +131,68 @@ Page ({
     })
   },
   formSubmit: function (e) {
+    console.log(e.detail.value)
     var self = this
-    if (self.data.tempFile != null) {
-      wx.uploadFile({
-        url: 'https://www.fracturesr.xyz/wxServer/upload', // 仅为示例，非真实的接口地址
-        filePath: this.data.tempFile,
-        name: 'file',
-        formData: {
-          user: 'test'
+    let i
+    let canSend = true
+    Object.keys(e.detail.value).forEach(function(key) {
+      if (e.detail.value[key] == null || e.detail.value[key] == 0) {
+        canSend = false
+      }
+    })
+    if (canSend == true) {
+      wx.request({
+        url: 'https://www.fracturesr.xyz/wxServer/send',
+        header: {
+          'content-type': "application/x-www-form-urlencoded"
         },
-        success(res) {
-          let i;
-          let canSend = true;
-          for(i=0;i<=4;i++){
-            if (e.detail.value[i] == null) {
-              canSend = false;
-            } else {
-              if (e.detail.value[i].length == 0) {
-                canSend = false;
-              }
-            }
-          }
-          if(canSend==true){
-            wx.request({
-              url: 'https://www.fracturesr.xyz/wxServer/send',
-              header: {
-                'content-type': "application/x-www-form-urlencoded"
-              },
-              method: 'POST',
-              data: {
-                Applicant: e.detail.value[0],
-                PhoneNumber: e.detail.value[1],
-                Email: e.detail.value[2],
-                ProjectName: e.detail.value[3],
-                ProjectDetail: e.detail.value[4]
-              },
-              success: function (res) {
-                wx.showToast({
-                  title: '提交成功',
-                  icon: 'success',
-                  duration: 1000,
-                  mask: true
-                })
-                self.setData({
-                  hasFile: false,
-                  tempFile: null
-                })
-              },
-              fail() {
-                wx.showToast({
-                  title: '提交失败',
-                  icon: 'loading',
-                  duration: 1000,
-                  mask: true
-                })
-              }
-            })
-          } else {
-            wx.showToast({
-              title: '请填写完整信息！',
-              duration: 1000,
-              icon: "none"
-            })
-          }
-          // wx.request({
-          //   url: 'https://www.fracturesr.xyz/wxServer/send',
-          //   header: {
-          //     'content-type': "application/x-www-form-urlencoded"
-          //   },
-          //   method: 'POST',
-          //   data: {
-          //     Applicant: e.detail.value[0],
-          //     PhoneNumber: e.detail.value[1],
-          //     Email: e.detail.value[2],
-          //     ProjectName: e.detail.value[3],
-          //     ProjectDetail: e.detail.value[4]
-          //   },
-          //   success: function (res) {
-          //     wx.showToast({
-          //       title: '提交成功',
-          //       icon: 'success',
-          //       duration: 1000,
-          //       mask: true
-          //     })
-          //     self.setData({
-          //       hasFile: false,
-          //       tempFile: null
-          //     })
-          //   },
-          //   fail() {
-          //     wx.showToast({
-          //       title: '提交失败',
-          //       icon: 'loading',
-          //       duration: 1000,
-          //       mask: true
-          //     })
-          //   }
-          // })
+        method: 'POST',
+        data: {
+          Applicant: e.detail.value.contact,
+          PhoneNumber: e.detail.value.phone,
+          Email: e.detail.value.mail,
+          ProjectName: e.detail.value.pn,
+          ProjectDetail: e.detail.value.pd
+        },
+        success: function (res) {
+          wx.showToast({
+            title: '提交成功',
+            icon: 'success',
+            duration: 1000,
+            mask: true
+          })
+        },
+        fail() {
+          wx.showToast({
+            title: '提交失败',
+            icon: 'loading',
+            duration: 1000,
+            mask: true
+          })
         }
       })
-    } else {
-      let i;
-      let canSend = true;
-      for (i = 0; i <= 4; i++) {
-        if (e.detail.value[i]==null) {
-          canSend = false;
-        }else{
-          if (e.detail.value[i].length==0){
-            canSend = false;
-          }
-        }
-      }
-      if(canSend){
-        wx.request({
-          url: 'https://www.fracturesr.xyz/wxServer/send',
-          header: {
-            'content-type': "application/x-www-form-urlencoded"
+      if (self.data.tempFile != null) {
+        wx.uploadFile({
+          url: 'https://www.fracturesr.xyz/wxServer/upload',
+          filePath: this.data.tempFile,
+          name: 'image',
+          formData: {
+            PhoneNumber: e.detail.value.phone
           },
-          method: 'POST',
-          data: {
-            Applicant: e.detail.value[0],
-            PhoneNumber: e.detail.value[1],
-            Email: e.detail.value[2],
-            ProjectName: e.detail.value[3],
-            ProjectDetail: e.detail.value[4]
-          },
-          success: function (res) {
-            wx.showToast({
-              title: '提交成功',
-              icon: 'succes',
-              duration: 1000,
-              mask: true
-            })
+          success(res) {
             self.setData({
               hasFile: false,
-              tempFile: null
-            })
-          },
-          fail() {
-            wx.showToast({
-              title: '提交失败',
-              icon: 'loading',
-              duration: 1000,
-              mask: true
+						  tempFile: null
             })
           }
         })
-      }else{
-        wx.showToast({
-          title: '请填写完整信息！',
-          duration:1000,
-          icon:'none'
-        })
       }
+    } else {
+      wx.showToast({
+        title: '请填写完整信息！',
+        duration: 1000,
+        icon: "none"
+      })
     }
   },
   upload: function(){

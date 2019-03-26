@@ -1,6 +1,6 @@
 <!--pages/xiehui/xiehui.wxml-->
 <i-notice-bar icon="systemprompt" loop>
-    2019年第22届莫斯科“阿基米德”国际发明展将于2019年3月26日到29日在俄罗斯首都莫斯科索科尔尼基会展中心）举行。
+    2019年第22届莫斯科“阿基米德”国际发明展将于2019年3月26日到29日在俄罗斯首都莫斯科索科尔尼基会展中心举行。
 </i-notice-bar>
 
 <i-modal title="个人信息" visible="{{visible}}" actions="{{actions}}" bind:click="handleClick">

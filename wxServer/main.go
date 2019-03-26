@@ -13,10 +13,11 @@ func main() {
 	//处理器绑定
 	mux.HandleFunc("/wxServer/test", utils.Test)
 	mux.HandleFunc("/wxServer/send", handlers.Sign)
+	mux.HandleFunc("/wxServer/send2", handlers.Sign2)
 	mux.HandleFunc("/wxServer/login", handlers.Login)
 	mux.HandleFunc("/wxServer/upload", handlers.FileUpload)
 	mux.HandleFunc("/wxServer/getGroup", handlers.GetGroupFromOpenId)
-	mux.HandleFunc("/wxServer/setGroup", handlers.SetGroup)
+	mux.HandleFunc("/wxServer/setInfo", handlers.SetInfo)
 
 	http.ListenAndServe("localhost:8079", mux)
 }

@@ -30,6 +30,15 @@ func Sign(w http.ResponseWriter, r *http.Request) {
 	email.Send("inventioncn@163.com", "inventionCN163", "InventionCN@163.com", "参展申请", msg)
 }
 
+func Sign2(w http.ResponseWriter, r *http.Request) {
+	msg := "联系人：" + r.PostFormValue("Applicant") + "\r\n"
+	msg += "联系方式：" + r.PostFormValue("PhoneNumber") + "\r\n"
+	msg += "电子邮件：" + r.PostFormValue("Email") + "\r\n"
+	msg += "专利名称：" + r.PostFormValue("ProjectName") + "\r\n"
+	msg += "专利介绍：" + r.PostFormValue("ProjectDetail") + "\r\n"
+	email.Send("inventioncn@163.com", "inventionCN163", "InventionCN@163.com", "专利咨询", msg)
+}
+
 func FileUpload(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
 
